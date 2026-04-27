@@ -1,0 +1,28 @@
+# Secrets
+private_key.pem
+*.pem
+breakfast.txt
+write.txt
+.env
+.env.*
+!.env.example
+
+# Local state
+kalshi_followed_events.json
+kalshi_blocked_markets.json
+
+# Logs
+*.log
+*.stdout
+
+# Trade audit dumps
+kalshi_place_*.json
+kalshi_amend_*.json
+kalshi_breakfast_orders_*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
