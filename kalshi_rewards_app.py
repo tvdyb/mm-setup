@@ -475,6 +475,10 @@ class PennyBot:
             # rewards from cycle 1, instead of waiting for someone else to post first.
             if best_bid is None:
                 if r.get("my_top_px") is not None: continue
+                # If the opposite side has bids strong enough that the implied
+                # ask on this side is ≤ 1¢ (e.g. NO bid 99¢ → YES ask 1¢),
+                # a 1¢ post-only seed would cross and be rejected. Skip.
+                if best_ask is not None and best_ask <= 1: continue
                 ticker = r["ticker"]; side = r["side"].lower()
                 with self._lock:
                     last = self._cooldown.get((ticker, side), 0)
