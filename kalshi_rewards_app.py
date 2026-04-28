@@ -412,6 +412,10 @@ class PennyBot:
                                     # a thin wall at the top while sitting at 3¢."
         self.auto_resolve_arbs = True
         self.arb_interval = 4       # seconds between arb sweeps
+        self.min_edge_cents = -2    # hard floor: skip any placement where
+                                    # (theo fair price - target price) is at or
+                                    # below this. Rows without a theo are
+                                    # exempt (no model → no rule).
         self._cooldown = {}         # (ticker, side) -> last_attempt_ts
         self._log = []              # recent {ts, msg, ok}
         self._lock = threading.Lock()
@@ -526,6 +530,14 @@ class PennyBot:
                 if would_create_arb(rows, ticker, side, 1, pending=pending):
                     self._emit(f"skip seed {side.upper()} {ticker}: would create arb", ok=False)
                     continue
+                # Theo-edge gate: skip placements where the model says we'd be
+                # buying ≥ MIN_EDGE_CENTS cents above fair value.
+                fair = r.get("fair_cents")
+                if fair is not None:
+                    edge = fair - 1
+                    if edge <= self.min_edge_cents:
+                        self._emit(f"skip seed {side.upper()} {ticker} 1¢: edge {edge:+.0f}¢ ≤ {self.min_edge_cents}¢ (fair {fair:.0f}¢)", ok=False)
+                        continue
                 with self._lock:
                     self._cooldown[(ticker, side)] = now
                 scanned += 1
@@ -579,6 +591,14 @@ class PennyBot:
             if would_create_arb(rows, ticker, side, target_px, pending=pending):
                 self._emit(f"skip {side.upper()} {ticker} {target_px}¢: would create arb", ok=False)
                 continue
+            # Theo-edge gate: skip if buying at target_px would be ≥
+            # |min_edge_cents| above the model's fair price.
+            fair = r.get("fair_cents")
+            if fair is not None:
+                edge = fair - target_px
+                if edge <= self.min_edge_cents:
+                    self._emit(f"skip {side.upper()} {ticker} {target_px}¢: edge {edge:+.0f}¢ ≤ {self.min_edge_cents}¢ (fair {fair:.0f}¢)", ok=False)
+                    continue
             cooldown = self.defend_cooldown_s if is_defense else self.cooldown_s
             with self._lock:
                 last = self._cooldown.get((ticker, side), 0)
