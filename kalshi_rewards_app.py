@@ -1810,21 +1810,58 @@ class App:
         self._cache = None
         self._cache_ts = 0
         self._lock = threading.Lock()
+        self._build_lock = threading.Lock()
+        self._refresher_started = False
+
+    def _build_and_store(self):
+        """Build a fresh snapshot. Single-flight via self._build_lock so concurrent
+        callers don't pile up build_summary()."""
+        with self._build_lock:
+            try:
+                d = build_summary()
+            except Exception as e:
+                import traceback, sys
+                print(f"build_summary failed: {e}", file=sys.stderr)
+                traceback.print_exc(file=sys.stderr)
+                return None
+        with self._lock:
+            self._cache = d
+            self._cache_ts = time.time()
+        return d
 
     def get_data(self):
+        # Always serve the cached snapshot if we have one — keeps /api/data
+        # latency at <5ms regardless of how slow build_summary() runs.
         with self._lock:
-            now = time.time()
-            if self._cache and now - self._cache_ts < 1.5:
-                return self._cache
-            d = build_summary()
-            self._cache = d
-            self._cache_ts = now
-            return d
+            cached = self._cache
+        if cached is not None:
+            return cached
+        d = self._build_and_store()
+        return d if d is not None else {"as_of": time.strftime("%H:%M:%S"),
+                                        "elapsed_s": 0, "rows": [],
+                                        "events": [], "fills": [], "arbs": [],
+                                        "total_orders": 0, "total_markets": 0,
+                                        "total_pool_per_hr": 0,
+                                        "total_per_hr": 0, "total_per_min": 0,
+                                        "balance": {"balance_cents": 0, "portfolio_cents": 0}}
 
     def invalidate(self):
         with self._lock:
             self._cache = None
             self._cache_ts = 0
+        threading.Thread(target=self._build_and_store, daemon=True).start()
+
+    def start_refresher(self, interval_s=1.5):
+        if self._refresher_started: return
+        self._refresher_started = True
+        def loop():
+            while True:
+                try:
+                    self._build_and_store()
+                except Exception:
+                    pass
+                time.sleep(interval_s)
+        threading.Thread(target=loop, daemon=True).start()
 
 
 def make_handler(app):
@@ -1919,6 +1956,7 @@ def main():
 
     app = App()
     PENNY.set_snapshot_fn(app.get_data)
+    app.start_refresher(interval_s=1.5)
     srv = ThreadingHTTPServer(("127.0.0.1", args.port), make_handler(app))
     print(f"Serving on http://localhost:{args.port}  (live per-market reward rates)")
     srv.serve_forever()
