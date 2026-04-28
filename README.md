@@ -97,7 +97,15 @@ per row, whether to place. The decision tree:
 ```
 if row is blocked (per-market blocklist):
     skip
-if best_bid is None or best_ask is None:
+
+# Seed empty markets — if our side has no bids at all, post 300 @ 1¢
+# (post_only). Bootstraps untraded strikes so we hold rank-1 from cycle 1.
+if best_bid is None and my_top_px is None:
+    skip if would-create-arb or in cooldown
+    place_buy(side, 300, 1, post_only=True)
+    continue
+
+if best_ask is None:
     skip
 spread = best_ask - best_bid
 

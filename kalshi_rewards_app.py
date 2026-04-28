@@ -469,7 +469,33 @@ class PennyBot:
         for r in rows:
             if r.get("blocked"): continue
             best_bid, best_ask = r.get("best_bid"), r.get("best_ask")
-            if best_bid is None or best_ask is None: continue
+
+            # Seed an empty side: side has zero bids → place 300 @ 1¢ post_only.
+            # Bootstraps untraded markets so we hold rank-1 and start collecting
+            # rewards from cycle 1, instead of waiting for someone else to post first.
+            if best_bid is None:
+                if r.get("my_top_px") is not None: continue
+                ticker = r["ticker"]; side = r["side"].lower()
+                with self._lock:
+                    last = self._cooldown.get((ticker, side), 0)
+                if now - last < self.cooldown_s: continue
+                if would_create_arb(rows, ticker, side, 1, pending=pending):
+                    self._emit(f"skip seed {side.upper()} {ticker}: would create arb", ok=False)
+                    continue
+                with self._lock:
+                    self._cooldown[(ticker, side)] = now
+                scanned += 1
+                resp = place_buy(ticker, side, 300, 1)
+                if resp.status_code < 300:
+                    placed += 1
+                    pending.append((ticker, side, 1))
+                    self._emit(f"SEED {side.upper()} {ticker} 1¢×300 (empty book)", ok=True)
+                else:
+                    self._emit(f"SEED FAIL {side.upper()} {ticker} 1¢: {resp.status_code} {resp.text[:80]}", ok=False)
+                time.sleep(0.25)
+                continue
+
+            if best_ask is None: continue
             spread = best_ask - best_bid
             my_top = r.get("my_top_px")
             share_pct = r.get("share_pct", 0)
