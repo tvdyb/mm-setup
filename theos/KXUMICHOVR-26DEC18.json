@@ -1,0 +1,17 @@
+{
+  "event": "KXUMICHOVR-26DEC18",
+  "underlying": "University of Michigan Index of Consumer Sentiment (overall, final release)",
+  "as_of": "2026-04-28T00:00:00Z",
+  "resolution_time": "2026-12-18",
+  "latest_known_value": 49.8,
+  "latest_known_date": "2026-04-25",
+  "latest_value_source_url": "https://investinglive.com/news/umich-april-final-consumer-sentiment-498-vs-480-expected-20260424/",
+  "expected_value_at_resolution": 56.0,
+  "sigma_used": 8.5,
+  "method": "Latest April 2026 final = 49.8 (record-low driven by Iran-conflict shock). Assumed partial mean reversion toward last-12-mo average ~55-58 over 8 months; sigma at horizon = monthly_change_std (~3.0) * sqrt(8) ~= 8.5. P(level > 65) computed from N(56, 8.5): z = 1.06 -> ~14.4%.",
+  "confidence": "low",
+  "strikes": {
+    "KXUMICHOVR-26DEC18-T65.0": 0.14
+  },
+  "notes": "Latest series prints (final): Apr26 49.8, Mar26 53.3, Feb26 56.6, Jan26 56.4, Dec25 52.9, Nov25 51.0, Oct25 53.6, Sep25 55.1, Aug25 58.2, Jul25 61.7. Series is at multi-year lows due to inflation fears and Iran war. To exceed 65 the index would need to rise ~15 points over ~8 months — possible if geopolitical shocks fade, but recent regime mean is mid-50s. Confidence LOW because the level depends heavily on whether the Iran-shock-driven regime persists. Market YES @ 17-18c is somewhat rich vs my 14% but within 1 vol of reasonable — NO edge slightly favored. Could not load Kalshi page directly (429); assumed standard 'final release > strike' resolution typical for KXUMICHOVR series."
+}

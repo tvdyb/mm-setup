@@ -71,6 +71,7 @@ What it shows per (market × side):
 | My px | Highest price you have a resting bid at |
 | Size | Total contracts you have resting on that side |
 | Spread | Best ask − best bid in cents |
+| Theo / Edge | Model-derived fair price for this side (cents) and edge vs current best bid (positive = fair value above market) |
 | Ahead | Cumulative size at strictly better prices than yours (rank measure) |
 | In top | Whether ≥1 of your contracts is in the rewards-paying top 300 |
 | Mine / In top | Your contracts and total contracts in the top 300 |
@@ -266,6 +267,7 @@ once you've reviewed the markets the dashboard is showing.
 | `KALSHI_KEY_PATH` | `./private_key.pem` | Path to the matching RSA private key |
 | `KALSHI_FOLLOWED_PATH` | `./kalshi_followed_events.json` | Persisted set of explicitly-followed event tickers |
 | `KALSHI_BLOCKED_PATH` | `./kalshi_blocked_markets.json` | Persisted blocklist of market tickers the penny bot must skip |
+| `KALSHI_THEOS_DIR` | `./theos` | Per-event JSON files with model fair-value YES probabilities; surfaced as the **Theo / Edge** dashboard column |
 | `KALSHI_MONITOR_LOG` | `./kalshi_reward_monitor.log` | Where the standalone monitor writes |
 
 ---
@@ -290,6 +292,40 @@ once you've reviewed the markets the dashboard is showing.
 - **Strike parsing.** Last segment starts with `T` followed by a decimal:
   `KXTRUFBFST-26APR27-T89.50` → strike `89.5`. Used by the arb detector to
   match YES/NO pairs across strikes.
+
+## Theos
+
+`theos/<EVENT-TICKER>.json` files supply model fair-value YES probabilities
+per strike. The app loads them from `KALSHI_THEOS_DIR` (default `./theos`),
+caches by mtime, and joins on ticker — so `theos/KXTRUFEGGS-26APR28.json`
+covers all `KXTRUFEGGS-26APR28-*` strikes. Schema:
+
+```json
+{
+  "event": "KXTRUFEGGS-26APR28",
+  "underlying": "Truflation US CPI Eggs Index ($/dozen)",
+  "as_of": "2026-04-28T15:41:51Z",
+  "resolution_time": "2026-04-29T10:00:00-04:00",
+  "current_value": 2.859,
+  "sigma_used": 0.025,
+  "method": "Normal CDF centered on most recent published value...",
+  "confidence": "medium",
+  "strikes": {
+    "KXTRUFEGGS-26APR28-T2.85": 0.6406,
+    "KXTRUFEGGS-26APR28-T2.86": 0.484
+  }
+}
+```
+
+For each row the dashboard computes:
+
+- **fair price (cents)** = `theo_yes * 100` for YES, `(1 - theo_yes) * 100` for NO
+- **edge vs bid** = `fair - best_bid` (positive ⇒ market is selling this side
+  below model fair, profitable to buy / sit deep)
+
+Theos are intentionally decoupled from the penny bot — the bot still chases
+rewards, the Theo column just tells you which sides are also priced
+favourably so you can lean in (or pull) manually.
 
 ## What's not here
 

@@ -1,0 +1,17 @@
+{
+  "event": "KXYOUTHUN-26DEC04",
+  "underlying": "BLS Unemployment Rate, ages 16-24, seasonally adjusted (FRED LNS14024887, BLS Employment Situation Table A-10/E-16)",
+  "as_of": "2026-04-28T00:00:00Z",
+  "resolution_time": "2026-12-04",
+  "latest_known_value": 8.5,
+  "latest_known_date": "2026-03-31",
+  "latest_value_source_url": "https://fred.stlouisfed.org/series/LNS14024887",
+  "expected_value_at_resolution": 8.6,
+  "sigma_used": 0.9,
+  "method": "Latest March 2026 print = 8.5% (SA, 16-24). Recent 12-month range ~8.5-10.8%; trailing 6-mo mean ~9.0%. Drift assumption: roughly flat with slight softening of labor market -> E~8.6 by Nov26 release. Sigma at horizon = monthly_diff_std (~0.32pp) * sqrt(8) ~= 0.9pp. P(>7.5) from N(8.6, 0.9): z = -1.22 -> ~89%.",
+  "confidence": "medium",
+  "strikes": {
+    "KXYOUTHUN-26DEC04-T7.5": 0.88
+  },
+  "notes": "Series has not printed below 7.7% in past 3 years; floor likely ~7.5-7.8% even in tight labor markets. To resolve NO would require a sharp ~1pp drop over 8 months while the labor market is currently softening (overall U3 at 4.3%, trending up). Market YES @ 14-15c implies ~14.5% probability of exceeding 7.5%, which is severely mispriced versus my model (~88%). STRONG BUY YES suggested if rules confirmed. Caveats that lower confidence: (1) could not load Kalshi rules page (429) to verify exact series — possible the contract uses NSA, a different table (E-16 race-by-age has different floors), or 20-24 only; (2) annual benchmark revisions at the Jan release can shift the level by ~0.2-0.4pp. If contract is actually 20-24 SA, March 2026 was also ~8.5%, similar conclusion."
+}

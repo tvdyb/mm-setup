@@ -1,0 +1,72 @@
+{
+  "event": "KXTRUFTSA-26APR28",
+  "underlying": "TSA daily passenger throughput, US checkpoints, 2026-04-28",
+  "as_of": "2026-04-28T15:39:59.818603+00:00",
+  "resolution_time": "2026-04-29T09:00:00-04:00 (TSA publishes prior-day total ~9am ET)",
+  "nowcast_passengers": 2070000,
+  "recent_observations": [
+    {
+      "date": "2026-04-21",
+      "passengers": 2050000,
+      "dow": "Tue",
+      "note": "estimated, depressed by shutdown"
+    },
+    {
+      "date": "2026-04-22",
+      "passengers": 2080000,
+      "dow": "Wed",
+      "note": "estimated"
+    },
+    {
+      "date": "2026-04-23",
+      "passengers": 2150000,
+      "dow": "Thu",
+      "note": "estimated"
+    },
+    {
+      "date": "2026-04-24",
+      "passengers": 2300000,
+      "dow": "Fri",
+      "note": "estimated, Friday peak"
+    },
+    {
+      "date": "2026-04-25",
+      "passengers": 1900000,
+      "dow": "Sat",
+      "note": "estimated"
+    },
+    {
+      "date": "2026-04-26",
+      "passengers": 2200000,
+      "dow": "Sun",
+      "note": "estimated"
+    },
+    {
+      "date": "2026-04-27",
+      "passengers": 2050000,
+      "dow": "Mon",
+      "note": "estimated"
+    }
+  ],
+  "sigma_used": 85000,
+  "method": "Normal nowcast around 2.07M anchored by ongoing TSA staffing crisis from Feb-Apr 2026 government shutdown depressing late-April Tuesday throughput ~15-20% below the ~2.5M no-crisis baseline; sigma reflects volatility under disrupted operations.",
+  "confidence": "low",
+  "strikes": {
+    "KXTRUFTSA-26APR28-T2070000": 0.5,
+    "KXTRUFTSA-26APR28-T2170000": 0.1197,
+    "KXTRUFTSA-26APR28-T2270000": 0.0093,
+    "KXTRUFTSA-26APR28-T2370000": 0.005,
+    "KXTRUFTSA-26APR28-T2470000": 0.005,
+    "KXTRUFTSA-26APR28-T2570000": 0.005,
+    "KXTRUFTSA-26APR28-T2670000": 0.005,
+    "KXTRUFTSA-26APR28-T2770000": 0.005,
+    "KXTRUFTSA-26APR28-T2870000": 0.005,
+    "KXTRUFTSA-26APR28-T2970000": 0.005,
+    "KXTRUFTSA-26APR28-T3070000": 0.005,
+    "KXTRUFTSA-26APR28-T3170000": 0.005,
+    "KXTRUFTSA-26APR28-T3270000": 0.005,
+    "KXTRUFTSA-26APR28-T3370000": 0.005,
+    "KXTRUFTSA-26APR28-T3470000": 0.005
+  },
+  "notes": "Could not fetch tsa.gov directly (403). 2026 has an active DHS/TSA shutdown since 2026-02-14, with 450+ TSA agents quitting, hours-long lines at major hubs, and conditions only partially improving by early April per Time/CNN/Axios coverage. Normal late-April Tuesday baseline would be ~2.45-2.55M (2025 Apr 22 ~2.49M); applied a ~15-20% shutdown haircut. Recent observations are illustrative estimates, not confirmed pulls. The T2570000 quote (mid 0.225) is almost certainly stale/wide; my model gives it ~0.0001 (floored to 0.005). Confidence is low because I lacked direct access to recent daily numbers."
+}

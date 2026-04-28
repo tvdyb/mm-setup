@@ -31,6 +31,46 @@ INCENTIVE_CACHE_S = 60  # programs change rarely; cache for 1 min
 FOLLOWED_PATH = Path(os.environ.get("KALSHI_FOLLOWED_PATH", "kalshi_followed_events.json"))
 DEFAULT_FOLLOWED = []
 BLOCKED_PATH = Path(os.environ.get("KALSHI_BLOCKED_PATH", "kalshi_blocked_markets.json"))
+THEOS_DIR = Path(os.environ.get("KALSHI_THEOS_DIR", "theos"))
+
+
+_theos_cache = {"map": {}, "meta": {}, "mtime": 0.0}
+_theos_lock = threading.Lock()
+
+
+def _load_theos():
+    """Load per-ticker YES probabilities from THEOS_DIR/*.json.
+    Each file: {"event": ..., "strikes": {ticker: prob}, "confidence": ..., ...}
+    Cached; reloads when any file's mtime changes."""
+    if not THEOS_DIR.exists(): return {}, {}
+    files = sorted(p for p in THEOS_DIR.glob("*.json") if not p.name.startswith("_"))
+    latest = max((p.stat().st_mtime for p in files), default=0.0)
+    with _theos_lock:
+        if latest == _theos_cache["mtime"] and _theos_cache["map"]:
+            return _theos_cache["map"], _theos_cache["meta"]
+    m, meta = {}, {}
+    for p in files:
+        try:
+            d = json.loads(p.read_text())
+        except Exception:
+            continue
+        ev = d.get("event") or p.stem
+        strikes = d.get("strikes") or {}
+        for tk, prob in strikes.items():
+            try:
+                pf = float(prob)
+                if pf != pf: continue
+                m[str(tk).strip().upper()] = max(0.0, min(1.0, pf))
+            except (TypeError, ValueError):
+                continue
+        meta[ev] = {"confidence": d.get("confidence"),
+                    "as_of": d.get("as_of"),
+                    "underlying": d.get("underlying")}
+    with _theos_lock:
+        _theos_cache["map"] = m
+        _theos_cache["meta"] = meta
+        _theos_cache["mtime"] = latest
+    return m, meta
 
 
 def _load_followed():
@@ -912,6 +952,7 @@ def build_summary():
     my_orders_set = set(t for t, _ in by_ts.keys())
     all_tickers = sorted((candidate & incentivized) | my_orders_set)
     books = fetch_orderbooks_parallel(all_tickers)
+    theo_map, _theo_meta = _load_theos()
 
     rows = []
     total_per_hr = 0.0
@@ -936,6 +977,17 @@ def build_summary():
             book_top = [[int(px), int(sz)] for px, sz in book_side[:5]]
             est_per_hr = share * rate_per_side
             total_per_hr += est_per_hr
+            theo_yes = theo_map.get(ticker)
+            if theo_yes is not None:
+                side_prob = theo_yes if side == "yes" else (1.0 - theo_yes)
+                fair_cents = side_prob * 100.0
+                edge_vs_bid = (fair_cents - best) if best is not None else None
+                edge_vs_ask = (fair_cents - best_ask) if best_ask is not None else None
+            else:
+                side_prob = None
+                fair_cents = None
+                edge_vs_bid = None
+                edge_vs_ask = None
             rows.append({
                 "ticker": ticker,
                 "side": side.upper(),
@@ -957,6 +1009,11 @@ def build_summary():
                 "target_size": target,
                 "ends_in_h": info["ends_in_h"] if info else None,
                 "blocked": ticker in blocked_snapshot,
+                "theo_yes_prob": theo_yes,
+                "side_theo_prob": side_prob,
+                "fair_cents": fair_cents,
+                "edge_vs_bid": edge_vs_bid,
+                "edge_vs_ask": edge_vs_ask,
             })
 
     # Sort: rows where I have orders first (by est $/hr desc), then untraded
@@ -1193,6 +1250,7 @@ PAGE = """<!doctype html>
         <th>My px</th>
         <th>Size</th>
         <th>Spread</th>
+        <th title="Model fair price for this side (cents) and edge vs best bid">Theo / Edge</th>
         <th>Ahead</th>
         <th>In top</th>
         <th>Mine / In top</th>
@@ -1240,6 +1298,21 @@ function shareColor(p) {
   if (p >= 30) return "green";
   if (p >= 5) return "yellow";
   return "red";
+}
+function theoCell(r) {
+  if (r.fair_cents === null || r.fair_cents === undefined) {
+    return '<span class="dim">—</span>';
+  }
+  const fair = Math.round(r.fair_cents);
+  const edge = r.edge_vs_bid;
+  const edgeRound = (edge === null || edge === undefined) ? null : Math.round(edge);
+  let edgeStr = '';
+  if (edgeRound !== null) {
+    const sign = edgeRound > 0 ? '+' : '';
+    const cls = edgeRound >= 5 ? 'green' : (edgeRound >= 1 ? 'yellow' : (edgeRound <= -5 ? 'red' : 'dim'));
+    edgeStr = ` <span class="${cls}">${sign}${edgeRound}¢</span>`;
+  }
+  return `<strong>${fair}¢</strong>${edgeStr}`;
 }
 function relTime(iso) {
   if (!iso) return "—";
@@ -1467,6 +1540,7 @@ function renderRows(rows) {
       <td>${myPxDisp}</td>
       <td>${r.my_total_sz}</td>
       <td>${(r.best_bid !== null && r.best_ask !== null) ? ((r.best_ask - r.best_bid) + "¢") : '<span class="dim">—</span>'}</td>
+      <td>${theoCell(r)}</td>
       <td>${aheadDisp}</td>
       <td>${hasOrders ? inTop : "<span class='dim'>—</span>"}</td>
       <td>${r.my_in_top} / ${r.tot_in_top}</td>
@@ -1486,7 +1560,7 @@ function renderRows(rows) {
     </tr>`;
   }).join("");
   document.getElementById("rows").innerHTML = html ||
-    '<tr><td colspan="14" class="dim">No incentivized markets right now.</td></tr>';
+    '<tr><td colspan="15" class="dim">No incentivized markets right now.</td></tr>';
 }
 
 function shortTickerLink(t) { return `<a class="mkt" href="${kalshiUrl(t)}" target="_blank" rel="noopener">${shortTicker(t)}↗</a>`; }
