@@ -1,0 +1,69 @@
+{
+  "event": "KXTRUEV-26APR30",
+  "underlying": "Truflation EV Commodity Index value as of Apr 30, 2026 (basket: cobalt, copper, nickel, palladium, platinum)",
+  "as_of": "2026-04-30T16:56:29+00:00",
+  "resolution_time": "2026-04-30T~23:59:00Z",
+  "central_value": 1235.7889,
+  "sigma_used": 10.0,
+  "anchors": {
+    "prior_anchor": 1217.1,
+    "weights": {
+      "HG=F": 0.2,
+      "PA=F": 0.2,
+      "PL=F": 0.2
+    },
+    "prior_close": {
+      "HG=F": 5.931000232696533,
+      "PA=F": 1468.0,
+      "PL=F": 1917.4000244140625
+    }
+  },
+  "method": "Anchor = Apr 29 settle 1217.10. Equal 20% weight Cu/Pd/Pt vs prior closes {'HG=F': 5.931000232696533, 'PA=F': 1468.0, 'PL=F': 1917.4000244140625}. Cobalt/nickel zero-drift. sigma=10 to absorb missing Co/Ni intraday + unknown true weights.\n[refreshed 2026-04-30T16:56Z] spots={'HG=F': 5.973, 'PA=F': 1520.5, 'PL=F': 1982.3} drift=+18.689 mu=1235.789 sigma=10.00",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXTRUEV-26APR30-T1155.42": 0.995,
+    "KXTRUEV-26APR30-T1165.42": 0.995,
+    "KXTRUEV-26APR30-T1175.42": 0.995,
+    "KXTRUEV-26APR30-T1185.42": 0.995,
+    "KXTRUEV-26APR30-T1195.42": 0.995,
+    "KXTRUEV-26APR30-T1205.42": 0.995,
+    "KXTRUEV-26APR30-T1215.42": 0.9792,
+    "KXTRUEV-26APR30-T1225.42": 0.8501,
+    "KXTRUEV-26APR30-T1235.42": 0.5147,
+    "KXTRUEV-26APR30-T1245.42": 0.1677,
+    "KXTRUEV-26APR30-T1255.42": 0.0248,
+    "KXTRUEV-26APR30-T1265.42": 0.005,
+    "KXTRUEV-26APR30-T1275.42": 0.005,
+    "KXTRUEV-26APR30-T1285.42": 0.005,
+    "KXTRUEV-26APR30-T1295.42": 0.005
+  },
+  "raw_strikes": {
+    "KXTRUEV-26APR30-T1155.42": 1.0,
+    "KXTRUEV-26APR30-T1165.42": 1.0,
+    "KXTRUEV-26APR30-T1175.42": 1.0,
+    "KXTRUEV-26APR30-T1185.42": 1.0,
+    "KXTRUEV-26APR30-T1195.42": 0.999973,
+    "KXTRUEV-26APR30-T1205.42": 0.998805,
+    "KXTRUEV-26APR30-T1215.42": 0.97917,
+    "KXTRUEV-26APR30-T1225.42": 0.850107,
+    "KXTRUEV-26APR30-T1235.42": 0.514715,
+    "KXTRUEV-26APR30-T1245.42": 0.167747,
+    "KXTRUEV-26APR30-T1255.42": 0.024817,
+    "KXTRUEV-26APR30-T1265.42": 0.001523,
+    "KXTRUEV-26APR30-T1275.42": 3.7e-05,
+    "KXTRUEV-26APR30-T1285.42": 0.0,
+    "KXTRUEV-26APR30-T1295.42": 0.0
+  },
+  "live_spots": {
+    "HG=F": 5.9735,
+    "PA=F": 1520.5,
+    "PL=F": 1982.3
+  },
+  "notes": "Initial build at Apr 30 open. Apr 29 settled 1217.10 vs my final theo mu=1225.93 \u2014 model overshot by 8.83 pts (0.88 sigma); directionally correct on 14/15 strikes (T1225 was knife-edge). Apr 29 prior anchor 1232 was too high; consider tightening prior or weighting Pt heavier. Strikes T1215.42 (theo 0.567) and T1225.42 (theo 0.203) are at-the-money.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXTRUEV-26APR30",
+    "/Users/wilsonw/Downloads/theos/KXTRUEV-26APR29.json",
+    "yfinance HG=F PA=F PL=F"
+  ],
+  "band_cents": 12.0
+}

@@ -1,0 +1,29 @@
+{
+  "event": "KXTRUFEGGS-26APR27",
+  "underlying": "Truflation US CPI Eggs Index, Apr 27, 2026 ($/dozen)",
+  "as_of": "2026-04-28T15:00:00+00:00",
+  "resolution_time": "2026-04-28T03:59:00Z",
+  "current_value": 2.86,
+  "settlement_value": 2.86,
+  "sigma_used": 0.0,
+  "method": "FINALIZED. Per Kalshi API event payload, all 10 markets (T2.81 through T2.90) have status=finalized with expiration_value=2.86. Markets T2.81/T2.82/T2.83/T2.84/T2.85 resolved YES (settlement_value_dollars=1.0000); markets T2.86/T2.87/T2.88/T2.89/T2.90 resolved NO (settlement_value_dollars=0.0000). Strike type 'greater' means print > strike, so the published Truflation Eggs index for Apr 27 2026 was 2.86 exactly (or at minimum >2.85 and <=2.86 by the boundary behavior \u2014 the API explicitly reports 2.86 as expiration_value). Settlement timestamp 2026-04-28T03:25:58Z. Theos lock at 0.995 for resolved-YES strikes and 0.005 for resolved-NO strikes per harness convention. No model uncertainty.",
+  "confidence": "high",
+  "strikes": {
+    "KXTRUFEGGS-26APR27-T2.81": 0.995,
+    "KXTRUFEGGS-26APR27-T2.82": 0.995,
+    "KXTRUFEGGS-26APR27-T2.83": 0.995,
+    "KXTRUFEGGS-26APR27-T2.84": 0.995,
+    "KXTRUFEGGS-26APR27-T2.85": 0.995,
+    "KXTRUFEGGS-26APR27-T2.86": 0.005,
+    "KXTRUFEGGS-26APR27-T2.87": 0.005,
+    "KXTRUFEGGS-26APR27-T2.88": 0.005,
+    "KXTRUFEGGS-26APR27-T2.89": 0.005,
+    "KXTRUFEGGS-26APR27-T2.90": 0.005
+  },
+  "notes": "Settled state. All 10 markets finalized 2026-04-28T03:25:58Z with expiration_value=2.86 from Kalshi API. Sub_title 'Apr 27, 2026'. Series KXTRUFEGGS, daily Truflation US CPI Eggs Index. Result confirms upstream user note that bucket (2.85, 2.86] resolved YES at 2.86 boundary. No live trading risk \u2014 these probabilities are degenerate truth.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/events/KXTRUFEGGS-26APR27",
+    "https://truflation.com/marketplace/us-inflation-rate"
+  ],
+  "band_cents": 0.0
+}

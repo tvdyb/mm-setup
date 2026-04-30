@@ -1,0 +1,38 @@
+{
+  "event": "KXHORMUZWEEKLY-26MAY03",
+  "underlying": "Number of transit calls through the Strait of Hormuz, IMF PortWatch, week 4/27-5/3 2026",
+  "as_of": "2026-04-30T17:49:58+00:00",
+  "resolution_time": "2026-05-05T13:00:00+00:00",
+  "current_value": 42,
+  "current_value_source_url": "https://portwatch.imf.org/pages/chokepoint6",
+  "sigma_used": "mixture (regime1 sigma=8, regime2 sigma=40)",
+  "mu_anchor": "mixture (0.85*N(42,8) + 0.15*N(100,40))",
+  "method": "Mixture model. Resolution rule (Kalshi): 'If the number of transit calls through the Strait of Hormuz as reported by the IMF PortWatch is above $X from Apr 27, 2026 to May 3, 2026, then the market resolves Yes.' Settlement source = IMF PortWatch chokepoint6 weekly aggregate. Underlying state: traffic catastrophically depressed since US/Iran blockade Feb 2026; pre-crisis baseline ~138 vessels/day (~966/week). Recent daily counts: 3-8 ships/day late April (8 reported on 4/26 per HormuzStraitMonitor; range 3-7 days prior). Implied 4/27-5/3 weekly point estimate: 6.5/day * 7 = ~42-46 vessels (open of week aligns with current trickle regime). Model: 85% probability of 'baseline trickle regime' ~ N(42, 8) representing day-to-day Poisson noise + minor incident variability; 15% probability of 'partial reopening regime' ~ N(100, 40) representing a real ceasefire/de-escalation midweek that allows ship traffic to recover toward 80-180/week (still well below pre-crisis 966). YES probability above strike s = 0.85*(1-Phi((s-42)/8)) + 0.15*(1-Phi((s-100)/40)), clipped to [0.005, 0.995]. The mixture is necessary because Normal-only undershoots the right-tail that Kalshi market is paying (T80 YES=0.11, T100 YES=0.065, T140 YES=0.05).",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXHORMUZWEEKLY-26MAY03-T30": 0.9372,
+    "KXHORMUZWEEKLY-26MAY03-T40": 0.6489,
+    "KXHORMUZWEEKLY-26MAY03-T50": 0.269,
+    "KXHORMUZWEEKLY-26MAY03-T60": 0.1366,
+    "KXHORMUZWEEKLY-26MAY03-T70": 0.1162,
+    "KXHORMUZWEEKLY-26MAY03-T80": 0.1037,
+    "KXHORMUZWEEKLY-26MAY03-T90": 0.0898,
+    "KXHORMUZWEEKLY-26MAY03-T100": 0.075,
+    "KXHORMUZWEEKLY-26MAY03-T120": 0.0463,
+    "KXHORMUZWEEKLY-26MAY03-T140": 0.0238,
+    "KXHORMUZWEEKLY-26MAY03-T160": 0.01,
+    "KXHORMUZWEEKLY-26MAY03-T180": 0.005,
+    "KXHORMUZWEEKLY-26MAY03-T200": 0.005
+  },
+  "notes": "Confidence MEDIUM-LOW because: (a) PortWatch counts have known data-quality issues \u2014 GPS jamming, AIS spoofing, vessels going dark per Wikipedia 2026 Hormuz Crisis page \u2014 so the official weekly figure can deviate non-trivially from raw observed counts; (b) the regime-shift probability (15%) is a judgment call from news flow (Iran proposal to US per recent reports, Apr 17 reopening per prior notes), could be 5-25% reasonable range; (c) this is the first week of the question on this strait under active blockade, so no calibration history. Edge picture vs market: T40 model 0.65 vs market mid 0.62 (essentially flat); T50 model 0.27 vs market 0.37 (sell YES at T50 = small edge, ~10c); T60 model 0.14 vs market 0.20 (sell YES at T60 ~6c edge); upper tail T80-T140 model and market roughly aligned. Most-tradeable view: SELL YES at T50, T60 if size available; otherwise no clear directional bet. Path risk: if a real ceasefire signs midweek, this whole vector goes to ~0.6-0.8 across mid strikes overnight.",
+  "sources": [
+    "https://portwatch.imf.org/pages/chokepoint6",
+    "https://en.macromicro.me/charts/94482/imf-strait-of-hormuz-number-of-ships-and-transit-volume",
+    "https://hormuzstraitmonitor.com/",
+    "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+    "https://www.nbcnews.com/data-graphics/strait-of-hormuz-ports-traffic-trump-us-iran-war-rcna331507",
+    "https://api.elections.kalshi.com/trade-api/v2/events/KXHORMUZWEEKLY-26MAY03",
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXHORMUZWEEKLY-26MAY03"
+  ],
+  "band_cents": 12.0
+}

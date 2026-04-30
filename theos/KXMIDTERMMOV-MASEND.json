@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-MASEND",
+  "underlying": "Massachusetts U.S. Senate 2026 D-R margin in pp (Markey D incumbent)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 33.0,
+  "sigma_used": 7.0,
+  "method": "Anchored on (a) Markey's 2020 +33.4 margin over O'Connor, (b) MA hasn't elected a Republican senator since 2010 (Brown), (c) UMass/WCVB poll (April 2026) shows Markey at 62% vs generic R, lead ~24pp, (d) Markey leads in primary (vs Moulton/Rikleen) so likely to be nominee, (e) Modest pull toward primary-poll mark (24pp) accepting some erosion since 2020. Mu=+33 anchors Markey's last general-election performance. Sigma 7 to allow downside if he draws a real moderate-R challenger like Charlie Baker (Baker has not declared but is mentioned in RCP polling).",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXMIDTERMMOV-MASEND-P23": 0.9234,
+    "KXMIDTERMMOV-MASEND-P25": 0.8735,
+    "KXMIDTERMMOV-MASEND-P27": 0.8043,
+    "KXMIDTERMMOV-MASEND-P29": 0.7161,
+    "KXMIDTERMMOV-MASEND-P31": 0.6125,
+    "KXMIDTERMMOV-MASEND-P33": 0.5,
+    "KXMIDTERMMOV-MASEND-P35": 0.3875,
+    "KXMIDTERMMOV-MASEND-P37": 0.2839,
+    "KXMIDTERMMOV-MASEND-P39": 0.1957,
+    "KXMIDTERMMOV-MASEND-P41": 0.1265,
+    "KXMIDTERMMOV-MASEND-P43": 0.0766
+  },
+  "notes": "Markey 2020: 66.2 vs 33.0 (+33.4). UMass April 2026 poll shows him at 62% (~+24pp) vs generic R. There's tail risk if Charlie Baker enters (RCP shows polling Markey vs Baker), which could compress margin to ~10pp. Sigma 7 is wider than other safe-D races for that reason. Floor strikes start at P23 \u2014 even a ~25pp Markey win clears that.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Massachusetts",
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Massachusetts",
+    "https://www.umass.edu/news/article/new-umass-amherstwcvb-poll-finds-markey-challengers-face-uphill-battle-2026-senate",
+    "https://www.realclearpolling.com/polls/senate/general/2026/massachusetts/markey-vs-baker",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings"
+  ],
+  "band_cents": 12.0
+}

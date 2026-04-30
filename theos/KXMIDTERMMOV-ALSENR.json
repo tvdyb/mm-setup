@@ -1,0 +1,33 @@
+{
+  "event": "KXMIDTERMMOV-ALSENR",
+  "underlying": "Republican margin of victory, 2026 Alabama U.S. Senate general election (Nov 3, 2026). OPEN seat: incumbent Tuberville running for governor.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 25.0,
+  "sigma_used": 8.0,
+  "method": "Anchor: 2020 Tuberville defeated Doug Jones by ~20pts (62.5-37.5). Trump won AL by ~30pts in 2024. State PVI deep R+15. 2026 is an OPEN seat (Tuberville running for governor) \u2014 increases uncertainty modestly. Trump-endorsed Barry Moore in primary; Marshall and Hudson also competitive. Likely D nominee will not be high-profile. Modeled R margin ~ N(25, 8). Sigma elevated due to open seat and competitive primary that may produce a less polished nominee than incumbent.",
+  "confidence": "medium-high",
+  "strikes": {
+    "KXMIDTERMMOV-ALSENR-P13": 0.9332,
+    "KXMIDTERMMOV-ALSENR-P15": 0.8944,
+    "KXMIDTERMMOV-ALSENR-P17": 0.8413,
+    "KXMIDTERMMOV-ALSENR-P19": 0.7734,
+    "KXMIDTERMMOV-ALSENR-P21": 0.6915,
+    "KXMIDTERMMOV-ALSENR-P23": 0.5987,
+    "KXMIDTERMMOV-ALSENR-P25": 0.5,
+    "KXMIDTERMMOV-ALSENR-P27": 0.4013,
+    "KXMIDTERMMOV-ALSENR-P29": 0.3085,
+    "KXMIDTERMMOV-ALSENR-P31": 0.2266,
+    "KXMIDTERMMOV-ALSENR-P33": 0.1587
+  },
+  "notes": "Open seat \u2014 Tuberville running for governor. Trump endorsed Moore. Generic ballot D+5 nationally is a modest headwind, but AL is R+15 PVI. Historical AL Senate margins: Shelby 2016 +28, Sessions 2014 uncontested, Jones 2017 special +1.7, Tuberville 2020 +20, Britt 2022 +37 (Britt got bigger margin than Tuberville). Mean of recent contested: ~22. Slightly higher mu vs Tuberville's 20 because open-seat R nominee likely faces weaker D and rides Britt-like environment. Kalshi market YES asks: P19 0.74, P21 0.67, P25 0.53, P29 0.36 \u2014 implies mid-quote median ~24-25, well-aligned with our 25.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Alabama",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama",
+    "https://ballotpedia.org/United_States_Senate_election_in_Alabama,_2026",
+    "https://www.cookpolitical.com/senate/race/488536",
+    "https://news.ballotpedia.org/2026/02/11/seven-candidates-are-running-in-the-republican-primary-for-the-u-s-senate-in-alabama-on-may-19-2026/",
+    "https://www.alreporter.com/2025/11/20/analysis-tubervilles-support-looks-strong-until-you-read-the-poll/"
+  ],
+  "band_cents": 3.0
+}

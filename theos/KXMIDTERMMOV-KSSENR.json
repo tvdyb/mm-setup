@@ -1,0 +1,33 @@
+{
+  "event": "KXMIDTERMMOV-KSSENR",
+  "underlying": "Republican margin of victory, 2026 Kansas U.S. Senate general election (Nov 3, 2026). Incumbent Roger Marshall (R) running for 2nd term.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 7.0,
+  "sigma_used": 10.0,
+  "method": "AUDIT FIX 2026-04-29: mu 9->7, sigma 8->10. Anchor: 2020 Marshall beat Bollier ~13pts (54-41 with Lib). 2022 Moran reelected easily. 2024 Trump won KS by ~16pts. Audit caught: Tavern Research poll showed independent Hamilton 51-49 over Marshall -- combined with DDHQ Oct 2025 also showing Hamilton narrowly ahead, indie threat is sustaining beyond a single-poll fluke. Mu compressed to 7, sigma widened to 10 reflecting genuinely competitive race + indie volatility. Modeled R margin ~ N(7, 10).",
+  "confidence": "medium",
+  "strikes": {
+    "KXMIDTERMMOV-KSSENR-P3": 0.6554,
+    "KXMIDTERMMOV-KSSENR-P5": 0.5793,
+    "KXMIDTERMMOV-KSSENR-P7": 0.5,
+    "KXMIDTERMMOV-KSSENR-P9": 0.4207,
+    "KXMIDTERMMOV-KSSENR-P11": 0.3446,
+    "KXMIDTERMMOV-KSSENR-P13": 0.2743,
+    "KXMIDTERMMOV-KSSENR-P15": 0.2119,
+    "KXMIDTERMMOV-KSSENR-P17": 0.1587,
+    "KXMIDTERMMOV-KSSENR-P19": 0.1151,
+    "KXMIDTERMMOV-KSSENR-P21": 0.0808,
+    "KXMIDTERMMOV-KSSENR-P23": 0.0548
+  },
+  "notes": "KS is the most competitive of the 8. Marshall won 2020 by only +13 in a strong R year. KS gov Laura Kelly (D) won statewide. One DDHQ poll showed indie Hamilton narrowly ahead (small sample, single poll). 2024 Trump only +16. Model: \u03bc=9 (between 2020 Marshall +13 and a discount for D-leaning environment + indie challenge). Kalshi YES asks: P3 0.73, P5 0.68, P9 0.59, P11 0.54, P13 0.50, P15 0.45 \u2014 implies market median ~13. Our model is slightly bearish vs market (\u03bc=9 vs market ~13) reflecting D+5 generic ballot tailwind and indie threat.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Kansas",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kansas",
+    "https://ballotpedia.org/United_States_Senate_election_in_Kansas,_2026",
+    "https://www.cookpolitical.com/senate/race/488581",
+    "https://x.com/DecisionDeskHQ/status/2045225193413431759",
+    "https://www.kcur.org/politics-elections-and-government/2025-12-30/whos-running-to-represent-kansas-in-the-u-s-senate-in-2026-heres-a-guide-to-the-candidates"
+  ],
+  "band_cents": 6.0
+}

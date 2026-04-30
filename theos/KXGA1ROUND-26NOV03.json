@@ -1,0 +1,30 @@
+{
+  "event": "KXGA1ROUND-26NOV03",
+  "underlying": "Whether each 2026 Georgia statewide general election (Nov 3, 2026) is decided in the first round (winner gets >50%, no Dec 1 runoff)",
+  "as_of": "2026-04-30T17:49:58+00:00",
+  "resolution_time": "Within hours of AP/SOS calling each race; market close 2027-11-03T15:00:00Z",
+  "method": "Independent binary YES probabilities for each Georgia statewide office. Georgia uses majority-runoff for general elections per state law (>50% required, runoff Dec 1 if no candidate clears). Anchors: (1) Kalshi mid-quotes (current). (2) Historical base rate: Georgia statewide general elections rarely go to runoff at the down-ballot level \u2014 only Senate races have triggered runoffs in 2008, 2020, 2022 due to Libertarian siphoning. Down-ballot offices (Lt Gov, AG, SoS, Ag/Insurance/Labor Comm, Supt) have NOT gone to runoff in modern era. (3) Senate 2026: Ossoff incumbent (D) polls 47-49% in head-to-heads vs Carter/Collins/Dooley with Libertarian historically taking 1-3%. ~50/50 on whether Ossoff or GOP nominee clears 50% \u2014 but right-tail mass favors clearing because the GA Libertarian party's general-election share has been declining (1.0% in 2022 Warnock-Walker, 2.1% in 2020 Perdue-Ossoff). (4) Governor 2026: open seat (Kemp termed-out). GOP primary fragmented: Burt Jones 21%, Rick Jackson 20%, Raffensperger 11%, Carr 6%, 40%+ undecided. Dem side Lance Bottoms leading. With no incumbent and a competitive open race plus potential Libertarian 1-3%, lower probability of first-round resolution than down-ballot. (5) Down-ballot: typically 2-party head-to-head, Libertarians often DON'T qualify ballot in lower offices; >95% historical first-round resolution. Use Kalshi market as primary anchor with small adjustments toward historical base rates.",
+  "confidence": "low",
+  "strikes": {
+    "KXGA1ROUND-26NOV03-SEN": 0.78,
+    "KXGA1ROUND-26NOV03-GOV": 0.74,
+    "KXGA1ROUND-26NOV03-LTGOV": 0.86,
+    "KXGA1ROUND-26NOV03-AG": 0.82,
+    "KXGA1ROUND-26NOV03-SOS": 0.85,
+    "KXGA1ROUND-26NOV03-COM": 0.91,
+    "KXGA1ROUND-26NOV03-COI": 0.86,
+    "KXGA1ROUND-26NOV03-COL": 0.88,
+    "KXGA1ROUND-26NOV03-SUP": 0.82
+  },
+  "notes": "Market last prices for reference: SEN 0.83, GOV 0.76, LTGOV 0.84, AG 0.78, SOS 0.84, COM 0.89, COI 0.84, COL 0.86, SUP 0.79. My adjustments: (a) SENATE 0.83\u21920.78: market anchored on competitive Ossoff polling but UNDERWEIGHTING runoff history \u2014 GA Senate races have triggered runoffs in 3 of last 5 cycles (2008 Chambliss-Martin, 2020 Perdue-Ossoff, 2022 Warnock-Walker). With Ossoff polling 47-49% and Libertarian likely 1-2%, the median outcome is exactly at the 50% threshold. Symmetric uncertainty argues for ~75-80%, not 83%. (b) GOVERNOR 0.76\u21920.74: open-seat governor with both parties having competitive primaries (Bottoms-led D primary, fragmented R primary). Open-seat statewide opens with higher third-party share historically; Kemp won 2018 with 50.2% (barely cleared) and 2022 53.4% (no third party). Open seat 2026 with no incumbent advantage suggests slightly lower clear-rate. (c) DOWN-BALLOT (LTGOV/AG/SOS/COM/COI/COL/SUP): I keep these close to market. Modern history shows ~95%+ clear rate for these offices but markets price ~80-90%; gap reflects Libertarian-on-ballot uncertainty (some down-ballot races have NO Libertarian candidate, locked-in clear rate ~99%). I add small positive risk premium of 1-2% over market for AG/SOS/COL/SUP where market may be over-discounting. (d) COMMISSIONER OF AGRICULTURE at 0.91 is the most-clear race per market; I keep at 0.91 (probably even higher in reality but this is fair). 6-month timeline + primary uncertainty \u2192 confidence LOW. NB: the 'Insurance' and 'Labor' commissioner are typically uncontested-in-substance races where Democrats may not even field; if no Libertarian, these are 99%+ clear.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXGA1ROUND-26NOV03",
+    "https://emersoncollegepolling.com/georgia-2026-poll-senator-ossoff-starts-re-election-near-50-and-outpaces-gop-field/",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia",
+    "https://www.racetothewh.com/senate/georgia26",
+    "https://www.270towin.com/2026-senate-polls/georgia",
+    "https://gawinlist.com/2026-political-landscape/",
+    "https://pro.stateaffairs.com/ga/elections/georgia-senate-election-2026"
+  ],
+  "band_cents": 20.0
+}

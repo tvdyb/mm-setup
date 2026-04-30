@@ -1,0 +1,36 @@
+{
+  "event": "KXTRUEV-26APR28",
+  "underlying": "Truflation EV Commodity Index value as of Apr 28, 2026",
+  "as_of": "2026-04-28T22:00:00+00:00",
+  "resolution_time": "Already settled \u2014 all markets are status='determined' as of 2026-04-28 evening. Truflation publishes daily ~end-of-day UTC.",
+  "central_value": 1232.0,
+  "sigma_used": 5.0,
+  "method": "ALL MARKETS ARE STATUS='determined' (settled). Last_price reveals settled outcome with high precision: above 1206.95 = 0.84, above 1216.95 = 0.82, above 1226.95 = 0.74, above 1236.95 = 0.00, above 1246.95 = 0.00, above 1256.95 = 0.00, above 1266.95 = 0.02 (residual noise), above 1276.95 = 0.01, above 1286.95 = 0.01, above 1296.95 = 0.01. The discrete jump from 0.74 at 1226.95 to 0.00 at 1236.95 implies the actual settled index value falls in (1226.95, 1236.95]. The 0.74 last-trade at 1226.95 is the marginal indecision tick \u2014 implies value VERY close to but ABOVE 1226.95 (else would have settled 0.00 like 1236.95 strike). Best point estimate ~1232 \u00b1 3. Probabilities below reflect post-settlement: above-strike below 1227 = ~1.0 (clipped to 0.995); above-strike at 1226.95 itself = 1.0 because value was above 1226.95; above 1236.95 and higher = 0.00 (clipped to 0.005). The 'last_price' for above-1226.95 of 0.74 likely reflects slow-to-settle noise during settlement window, not true distributional uncertainty \u2014 the settled binary outcome is YES for 1226.95 strike, NO for 1236.95 strike.",
+  "confidence": "high",
+  "strikes": {
+    "KXTRUEV-26APR28-T1156.95": 0.995,
+    "KXTRUEV-26APR28-T1166.95": 0.995,
+    "KXTRUEV-26APR28-T1176.95": 0.995,
+    "KXTRUEV-26APR28-T1186.95": 0.995,
+    "KXTRUEV-26APR28-T1196.95": 0.995,
+    "KXTRUEV-26APR28-T1206.95": 0.995,
+    "KXTRUEV-26APR28-T1216.95": 0.995,
+    "KXTRUEV-26APR28-T1226.95": 0.995,
+    "KXTRUEV-26APR28-T1236.95": 0.005,
+    "KXTRUEV-26APR28-T1246.95": 0.005,
+    "KXTRUEV-26APR28-T1256.95": 0.005,
+    "KXTRUEV-26APR28-T1266.95": 0.005,
+    "KXTRUEV-26APR28-T1276.95": 0.005,
+    "KXTRUEV-26APR28-T1286.95": 0.005,
+    "KXTRUEV-26APR28-T1296.95": 0.005
+  },
+  "notes": "Edge case: this event is ALREADY DETERMINED at theo-build time. All markets show status='determined' in API. The settlement signal is unambiguous: index landed in (1226.95, 1236.95] window. There is no real trading edge here \u2014 quotes (yes_bid 0 / yes_ask 1.0 across the board) reflect post-settlement state with no further price discovery. The 0.74 last-price on T1226.95 is the highest in-the-money tick before final settle and confirms YES; the 0.00 on T1236.95 confirms NO at 1236.95. I clip to 0.995/0.005 per spec. Edge if anyone is misquoting: someone offering NO at less than 1.00 on the 1226.95 strike (would resolve YES); someone offering YES at >0 on the 1236.95+ strikes (would resolve NO). Truflation EV Commodity Index (TruEV) is a real-time on-chain index tracking EV battery commodity costs (cobalt, copper, nickel, palladium, platinum). Confidence HIGH because outcome is determined.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXTRUEV-26APR28",
+    "https://truflation.com/marketplace/ev-index",
+    "https://truflation.com/blog/truflation-launches-electric-vehicle-commodity-index",
+    "https://blog.truflation.com/product-update-ev-index/",
+    "https://octagonai.co/markets/economics/econ-daily/truflation-ev-commodity-index-for-april-22-2026/"
+  ],
+  "band_cents": 0.0
+}

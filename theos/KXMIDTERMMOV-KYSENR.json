@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-KYSENR",
+  "underlying": "Republican margin of victory, 2026 Kentucky U.S. Senate general election (Nov 3, 2026). OPEN seat \u2014 McConnell retiring.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 14.0,
+  "sigma_used": 7.0,
+  "method": "Anchor: 2020 McConnell beat McGrath +19.6. 2022 Paul +23. 2024 Trump won KY by ~30pts. 2026 OPEN seat \u2014 McConnell retiring after 40 years. R primary Barr/Cameron/Morris. Likely D nominee Charles Booker (lost 2022 to Paul by ~23). Open seat + post-McConnell environment + D+5 generic ballot. Modeled R margin ~ N(14, 7).",
+  "confidence": "medium",
+  "strikes": {
+    "KXMIDTERMMOV-KYSENR-P12": 0.6125,
+    "KXMIDTERMMOV-KYSENR-P14": 0.5,
+    "KXMIDTERMMOV-KYSENR-P16": 0.3875,
+    "KXMIDTERMMOV-KYSENR-P18": 0.2839,
+    "KXMIDTERMMOV-KYSENR-P20": 0.1957,
+    "KXMIDTERMMOV-KYSENR-P22": 0.1265,
+    "KXMIDTERMMOV-KYSENR-P24": 0.0766,
+    "KXMIDTERMMOV-KYSENR-P26": 0.0432,
+    "KXMIDTERMMOV-KYSENR-P28": 0.0228,
+    "KXMIDTERMMOV-KYSENR-P30": 0.0111,
+    "KXMIDTERMMOV-KYSENR-P32": 0.0051
+  },
+  "notes": "Open seat (McConnell retiring). KY governor Andy Beshear (D) twice elected statewide. Booker likely D nominee \u2014 lost 2022 to Paul by ~23 but better-funded now. R primary winner (Barr most likely from current polls) is establishment-aligned. 2024 Trump +30. Model: 14pts \u2014 closer to McConnell's 2020 result minus open-seat penalty and D environment penalty, partially offset by deepening R PVI. Kalshi YES asks: P12 0.73, P14 0.60, P16 0.47, P18 0.34 \u2014 market median ~15. We're roughly aligned.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Kentucky",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Kentucky",
+    "https://ballotpedia.org/United_States_Senate_election_in_Kentucky,_2026",
+    "https://emersoncollegepolling.com/kentucky-2026-poll-barr-maintains-edge-in-gop-primary-as-booker-gains-among-democratic-voters/",
+    "https://www.wkyt.com/2026/02/05/barr-booker-lead-early-polling-kentucky-senate-primaries-replace-mcconnell/"
+  ],
+  "band_cents": 6.0
+}

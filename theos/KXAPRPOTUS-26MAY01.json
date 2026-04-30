@@ -1,0 +1,39 @@
+{
+  "event": "KXAPRPOTUS-26MAY01",
+  "underlying": "RealClearPolitics Trump approval rating average at 11:00 AM ET on May 1, 2026",
+  "as_of": "2026-04-29T03:05:00+00:00",
+  "resolution_time": "2026-05-01T15:00:00Z",
+  "current_value": 40.7,
+  "current_value_source": "RealClearPolitics Trump Job Approval, 40.7% approve / 57.4% disapprove (fetched 2026-04-28)",
+  "alt_anchors": {
+    "silver_bulletin": 39.0,
+    "fiftyplusone_strength_in_numbers": 37.0,
+    "votehub_time_adjusted": 38.7,
+    "ddhq": null
+  },
+  "expected_value_at_resolution": 40.55,
+  "sigma_used": 0.45,
+  "method": "Anchor on RCP (the resolution source) at 40.7% on 2026-04-28. Project 3 days forward to May 1 using a slight downward drift (-0.05pp/day) given (a) Reuters/Ipsos 33% poll dropping into the basket on 4/28 will pull RCP, (b) ongoing Iran war headlines and high gas prices, (c) Silver Bulletin and FPO already running 1.7-3.7pp lower so RCP catching down is likely. Sigma 0.45pp captures 3-day RCP polling-average noise: empirical RCP daily moves around 0.10-0.15pp std, so sqrt(3) * 0.13 ~= 0.22 from drift noise + ~0.35 from poll-add discreteness (1-2 polls drop in/out). Treat resolution as continuous Normal(40.55, 0.45) and integrate over each bucket. Probabilities: <39.9 = Phi((39.9-40.55)/0.45) = 7.4%; 39.9-40.1 = Phi(-1.0)-Phi(-1.44) = 8.4%; 40.2-40.4 = Phi(-0.33)-Phi(-0.78) = 15.4%; 40.5-40.7 (mode) = Phi(0.33)-Phi(-0.11) = 17.4%; 40.8-41.0 = Phi(1.0)-Phi(0.56) = 13.5%; 41.1-41.3 = Phi(1.67)-Phi(1.22) = 6.4%; 41.4-41.6 = Phi(2.33)-Phi(1.89) = 1.9%; >41.6 = 1-Phi(2.33) = 1.0%. Sum to within rounding of 1.0 (residual goes to <39.9 left tail since RCP can plausibly drop further on AP-NORC 33 + Reuters 33 entering average).",
+  "confidence": "medium",
+  "strikes": {
+    "KXAPRPOTUS-26MAY01-39.9": 0.13,
+    "KXAPRPOTUS-26MAY01-40.0": 0.1,
+    "KXAPRPOTUS-26MAY01-40.3": 0.18,
+    "KXAPRPOTUS-26MAY01-40.6": 0.21,
+    "KXAPRPOTUS-26MAY01-40.9": 0.18,
+    "KXAPRPOTUS-26MAY01-41.2": 0.1,
+    "KXAPRPOTUS-26MAY01-41.5": 0.06,
+    "KXAPRPOTUS-26MAY01-41.6": 0.04
+  },
+  "notes": "RCP-resolved (per market rules), so I anchor on RCP not Silver Bulletin/FPO. RCP runs ~1.5-3.5pp higher than other aggregators because of pollster mix (more Rasmussen/InsiderAdvantage). Current RCP 40.7 sits within the modal 40.5-40.7 bucket. Risks: (1) Reuters/Ipsos 33% (4/24-27) and AP-NORC 33% will pull RCP DOWN over next 3 days as they enter the rolling average \u2014 this is why I bumped the <40.0 buckets above raw Normal calc and tilted modes left. (2) RCP could ALSO age out an old low-approval poll which would push back up. (3) The 11am ET cutoff captures AM Friday \u2014 limited new-poll risk on resolution day itself. Market quotes show heavy mass on 40.5-40.7 (last 0.34) and 40.2-40.4 (last 0.22) \u2014 close to my model. I see modest edge: T39.9 bid 0.06 vs my 0.13 (BUY YES), T40.9 bid 0.23 vs my 0.18 (small SELL YES), T41.5 bid 0.04 vs my 0.06 (slight BUY YES). Conf=medium because RCP is well-tracked but 3-day forward drift in volatile news cycle adds genuine sigma.",
+  "sources": [
+    "https://www.realclearpolling.com/polls/approval/donald-trump/approval-rating",
+    "https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin",
+    "https://fiftyplusone.news/polls/approval/president",
+    "https://votehub.com/polls/",
+    "https://www.aljazeera.com/news/2026/4/28/trump-approval-dips-to-record-low-amid-iran-war-inflation-woes-poll",
+    "https://politicalwire.com/2026/04/28/trumps-approval-sinks-to-34/",
+    "https://www.reuters.com/world/us/trumps-approval-rating-falls-second-term-low-reutersipsos-poll-finds-2026-04-28/"
+  ],
+  "band_cents": 6.0
+}

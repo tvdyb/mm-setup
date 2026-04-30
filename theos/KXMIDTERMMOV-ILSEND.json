@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-ILSEND",
+  "underlying": "Illinois U.S. Senate 2026 D-R margin in pp (open seat: Stratton D vs GOP, Durbin retiring)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 16.0,
+  "sigma_used": 7.0,
+  "method": "AUDIT FIX 2026-04-29: mu 14->16. Anchored on (a) Durbin's 2020 +14.7 margin, (b) Harris winning IL by ~+10 in 2024, (c) Stratton (LG) won the D primary March 2026 with Pritzker's backing -- sitting LG, no major personal vulnerability, (d) open-seat penalty offset by D-friendly 2026 environment + Pritzker machine. Audit raised mu from 14 to 16: D-friendly midterm environment + machine-backed candidate suggests modest outperformance vs Durbin's 2020 baseline rather than open-seat discount. Sigma 7 reflects no general-election head-to-head polls.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXMIDTERMMOV-ILSEND-P9": 0.8413,
+    "KXMIDTERMMOV-ILSEND-P11": 0.7625,
+    "KXMIDTERMMOV-ILSEND-P13": 0.6659,
+    "KXMIDTERMMOV-ILSEND-P15": 0.5568,
+    "KXMIDTERMMOV-ILSEND-P17": 0.4432,
+    "KXMIDTERMMOV-ILSEND-P19": 0.3341,
+    "KXMIDTERMMOV-ILSEND-P21": 0.2375,
+    "KXMIDTERMMOV-ILSEND-P23": 0.1587,
+    "KXMIDTERMMOV-ILSEND-P25": 0.0993,
+    "KXMIDTERMMOV-ILSEND-P27": 0.058,
+    "KXMIDTERMMOV-ILSEND-P29": 0.0316
+  },
+  "notes": "Open seat (Durbin retiring) \u2014 Stratton won D primary with Pritzker's backing 40.1%. Durbin won 2020 by +14.7. Harris won IL +10 in 2024. Stratton lacks federal incumbency but is a sitting statewide officer with strong machine. Mu=+14 splits the difference. Sigma 7 wider than incumbent races to capture open-seat uncertainty.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Illinois",
+    "https://www.nprillinois.org/2026-03-13/who-will-win-the-u-s-senate-primaries-in-illinois-lets-look-at-the-data",
+    "https://emersoncollegepolling.com/illinois-2026-poll-krishamoorthi-leads-democratic-senate-primary-plurality-still-undecided/",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings",
+    "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls"
+  ],
+  "band_cents": 12.0
+}

@@ -1,0 +1,34 @@
+{
+  "event": "KXMIDTERMMOV-OKSENR",
+  "underlying": "Republican margin of victory, 2026 Oklahoma U.S. Senate general election (Nov 3, 2026). OPEN seat \u2014 Mullin resigned to become DHS Secretary; appointed Sen. Armstrong cannot seek term.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 30.0,
+  "sigma_used": 8.0,
+  "method": "Anchor: 2020 Inhofe +21 (53.4-42.5). 2022 Lankford +35.8 (full-term). 2022 special Mullin +26.6. 2024 Trump won OK by ~33pts. Now OPEN seat \u2014 Mullin resigned March 2026 (DHS); Trump-aligned Kevin Hern emerged as leading R. D bench is weak; OK Dem hasn't carried any county in recent Senate races. Modeled R margin ~ N(30, 8).",
+  "confidence": "medium-high",
+  "strikes": {
+    "KXMIDTERMMOV-OKSENR-P17": 0.9479,
+    "KXMIDTERMMOV-OKSENR-P19": 0.9154,
+    "KXMIDTERMMOV-OKSENR-P21": 0.8697,
+    "KXMIDTERMMOV-OKSENR-P23": 0.8092,
+    "KXMIDTERMMOV-OKSENR-P25": 0.734,
+    "KXMIDTERMMOV-OKSENR-P27": 0.6462,
+    "KXMIDTERMMOV-OKSENR-P29": 0.5497,
+    "KXMIDTERMMOV-OKSENR-P31": 0.4503,
+    "KXMIDTERMMOV-OKSENR-P33": 0.3538,
+    "KXMIDTERMMOV-OKSENR-P35": 0.266,
+    "KXMIDTERMMOV-OKSENR-P37": 0.1908
+  },
+  "notes": "Open seat after Mullin \u2192 DHS Secretary (March 2026). Hern (R-OK leading candidate, Trump-endorsed) likely nominee. Recent OK Senate margins: Inhofe+21 (2020), Mullin+26.6 (2022 special), Lankford+35.8 (2022 full). Mean ~28; trending up with Trump's deepening hold. State PVI Trump+33 in 2024. Model \u03bc=30 \u2014 between Mullin's special (26.6) and Lankford's full (35.8); open-seat slightly compresses margin. Kalshi YES asks: P25 0.68, P29 0.54, P31 0.47, P33 0.41 \u2014 market median ~30, aligned.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Oklahoma",
+    "https://en.wikipedia.org/wiki/2022_United_States_Senate_special_election_in_Oklahoma",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Oklahoma",
+    "https://ballotpedia.org/United_States_Senate_election_in_Oklahoma,_2026",
+    "https://www.cookpolitical.com/senate/race/488656",
+    "https://time.com/article/2026/03/24/markwayne-mullin-senate-oklahoma-alan-armstrong/",
+    "https://chs-inc.com/2026-fed-elections-2/"
+  ],
+  "band_cents": 3.0
+}

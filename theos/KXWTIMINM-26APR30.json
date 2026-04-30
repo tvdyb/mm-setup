@@ -1,0 +1,36 @@
+{
+  "event": "KXWTIMINM-26APR30",
+  "underlying": "Minimum WTI front-month settle price (USD/Bbl) between issuance and Apr 30, 2026 (ICE-reported)",
+  "as_of": "2026-04-28T20:30:00+00:00",
+  "resolution_time": "2026-04-30T18:30:00+00:00",
+  "current_value": 99.61,
+  "current_value_source_url": "https://angle360ng.com/wti-crude-oil-price-today-april-28-2026/",
+  "sigma_used": 3.5,
+  "mu_anchor": 99.61,
+  "method": "Path-dependent minimum-of-month model. Resolution rule (Kalshi): 'If ICE reports that the minimum price of oil (set of WTI front-month settle prices) is below $X between Issuance and Apr 30, 2026, the market resolves Yes.' Two strikes already FINALIZED YES (T84, T86 both YES=0.99/1.00 with status='finalized') -> realized April min already below $84. T82 still status='active' with YES=0.02/0.03 -> realized min has not yet broken $82, so realized min so far is in [82, 84). Earlier reports show intramonth low ~$80.56 \u2014 slight conflict with Kalshi finalization status; Kalshi is settlement-authoritative for this contract, so we trust API: realized_min in [82, 84). For each remaining active strike s <= 82, YES = P(min over remaining 2 settles (4/29, 4/30) < s) where future settles distributed N(99.61, 3.5) per day. Min-over-2-iid: P(min < s) = 1 - (1 - Phi((s-99.61)/3.5))^2. For s in {64,66,68,70,72,74,76,78,80,82}: probabilities are all <0.01 (z = (82-99.61)/3.5 = -5.03, essentially zero). All clipped to floor 0.005. T84, T86 hard-coded to 0.995 (already finalized YES per API).",
+  "confidence": "high",
+  "strikes": {
+    "KXWTIMINM-26APR30-T64": 0.005,
+    "KXWTIMINM-26APR30-T66": 0.005,
+    "KXWTIMINM-26APR30-T68": 0.005,
+    "KXWTIMINM-26APR30-T70": 0.005,
+    "KXWTIMINM-26APR30-T72": 0.005,
+    "KXWTIMINM-26APR30-T74": 0.005,
+    "KXWTIMINM-26APR30-T76": 0.005,
+    "KXWTIMINM-26APR30-T78": 0.005,
+    "KXWTIMINM-26APR30-T80": 0.005,
+    "KXWTIMINM-26APR30-T82": 0.005,
+    "KXWTIMINM-26APR30-T84": 0.995,
+    "KXWTIMINM-26APR30-T86": 0.995
+  },
+  "notes": "Confidence HIGH: this is mostly a finalization/lookback question and the API tells us the answer for T84 and T86. For all sub-$82 strikes, WTI sitting at $99.61 needs an 18%+ collapse in 2 days to trigger \u2014 practically impossible barring a shock equivalent to COVID-March-2020. T82 is the only borderline contract (market YES=0.02-0.03), and a 17.6% drop in 2 days has historical frequency near zero outside crisis bottoms; model 0.005 is appropriate. Edge: T82 NO at 0.97-0.98 is a fairly priced sell-YES (no real edge after spread). The lopsided risk is upside-only: if WTI crashes through $82 by 4/30 settle (e.g., sudden Iran ceasefire + OPEC+ production hike + Druzhba restart), T82 jumps from 0.02 to 1.00 \u2014 but probability is ~0.5% even in tail. Sources confirm intramonth low has been printed earlier in April (Polymarket and intraday data show prints near $80-84 range during the Apr 23 trough), consistent with T84 finalization.",
+  "sources": [
+    "https://angle360ng.com/wti-crude-oil-price-today-april-28-2026/",
+    "https://fxdailyreport.com/wti-crude-oil-price-analysis-for-april-28-2026/",
+    "https://tradingeconomics.com/commodity/crude-oil",
+    "https://fred.stlouisfed.org/series/DCOILWTICO",
+    "https://api.elections.kalshi.com/trade-api/v2/events/KXWTIMINM-26APR30",
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXWTIMINM-26APR30"
+  ],
+  "band_cents": 0.0
+}

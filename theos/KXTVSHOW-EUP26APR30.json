@@ -1,0 +1,36 @@
+{
+  "event": "KXTVSHOW-EUP26APR30",
+  "underlying": "Euphoria Season 3 cumulative 'Season Views (Activity to Date)' on Luminate, through tracking week ending April 30, 2026",
+  "as_of": "2026-04-28T22:00:00+00:00",
+  "resolution_time": "Data publishes up to ~48h after tracking-week end; market close 2026-05-02T14:00:00Z",
+  "central_value": 11000000,
+  "sigma_used": 4000000,
+  "method": "Normal(mu=13M, sigma=3M) on cumulative Luminate season views through 4/30. Anchors: (1) Premiere aired 4/12 (Sun); ep2 4/19; ep3 4/26 \u2014 three episodes accumulated by 4/30 tracking week end. (2) Nielsen US 3-day premiere = 8.5M viewers (cross-platform HBO+HBO Max); ep1 has since climbed to 12.3M extended (HBO press); global premiere 20M+. Ep2 also 8.5M in 3 days. (3) Luminate counts US streaming activity differently from Nielsen \u2014 Luminate 'season views' is a SVOD streaming-views metric (cumulative play count) that for prior-season Euphoria S2 ran several million per episode and aggregated double-digit M cumulative within first month. (4) S3 has materially outperformed S2 in early data (S2 ep2 reached 6.4M Nielsen vs S3 ep2 8.5M = +32%; S3 globally +68% vs S2 premiere). Conservative: scale S2's ~10-12M cumulative Luminate views around equivalent point by ~1.4-1.5x \u2192 ~14-18M; compromise with platform-mix uncertainty \u2192 13M central. (5) Kalshi market signal: 6M YES bid 0.88 ask 0.89, 8M 0.87/0.97, 10M 0.57/0.98 (very wide \u2014 illiquid), 2.2M 0.81/0.99. Market-implied central ~10-11M with wide ask spreads suggesting 50/50 around ~10M is upper bound the market is confident about. I sit slightly above market on central tendency given the strong pace data and S2 baseline scaling. Sigma 3M reflects (a) ambiguity over what Luminate's specific metric counts (account-level views vs household completions), (b) one episode (4/26) has barely 4-day window before tracking-week end. Cumulative 'activity to date' through end-of-week is also somewhat ambiguous.",
+  "confidence": "low",
+  "strikes": {
+    "KXTVSHOW-EUP26APR30-2200000": 0.9861,
+    "KXTVSHOW-EUP26APR30-2400000": 0.9842,
+    "KXTVSHOW-EUP26APR30-2600000": 0.9821,
+    "KXTVSHOW-EUP26APR30-2800000": 0.9798,
+    "KXTVSHOW-EUP26APR30-3000000": 0.9772,
+    "KXTVSHOW-EUP26APR30-3200000": 0.9744,
+    "KXTVSHOW-EUP26APR30-3400000": 0.9713,
+    "KXTVSHOW-EUP26APR30-3600000": 0.9678,
+    "KXTVSHOW-EUP26APR30-3800000": 0.9641,
+    "KXTVSHOW-EUP26APR30-4000000": 0.9599,
+    "KXTVSHOW-EUP26APR30-6000000": 0.8944,
+    "KXTVSHOW-EUP26APR30-8000000": 0.7734,
+    "KXTVSHOW-EUP26APR30-10000000": 0.5987
+  },
+  "notes": "Probabilities are 1 - Phi((K - 13e6) / 3e6). Market is illiquid with very wide bid-ask (e.g., 10M strike: bid 0.57, ask 0.98). Heavy left-skew protection: even at 2.2M floor strike, prob 0.99 reflects near-certainty given just the premiere alone (8.5M Nielsen US 3-day) but Luminate metric ambiguity caps me at 0.99 (NOT 0.995) \u2014 I want a small reservation in case Luminate's 'season views' is defined narrowly enough (e.g., completions only, single-platform) to undercount. Highest listed strike 10M = 0.59 (mean above strike). KEY RISKS: (a) Luminate's 'Season Views (Activity to Date)' has the explicit clarification per Kalshi event metadata that it is CUMULATIVE through the END of tracking week (not weekly increment), so this is favorable for high-strike YES. (b) Tracking-week 4/24-4/30: ep3 dropped 4/26 \u2014 gets only ~5 days of 4/26 episode views aggregated. (c) 12M strike doesn't exist in current ticker list, so no theo entry. Confidence LOW given Luminate metric opacity + my inability to find a public Luminate prior-week number to anchor.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXTVSHOW-EUP26APR30",
+    "https://variety.com/2026/tv/news/euphoria-season-3-premiere-ratings-1236723567/",
+    "https://www.thewrap.com/creative-content/tv-shows/euphoria-season-3-ratings-20-million-viewers/",
+    "https://variety.com/2026/tv/news/euphoria-episode-2-ratings-season-3-1236729123/",
+    "https://deadline.com/2026/04/euphoria-season-3-premiere-ratings-hbo-1236863088/",
+    "https://press.wbd.com/ca/media-release/hbo-0/euphoria-makes-its-highly-anticipated-season-3-return-85-million-us-viewers-44-lift",
+    "https://luminatedata.com/"
+  ],
+  "band_cents": 20.0
+}

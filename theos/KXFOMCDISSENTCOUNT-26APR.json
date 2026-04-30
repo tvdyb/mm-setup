@@ -1,0 +1,30 @@
+{
+  "event": "KXFOMCDISSENTCOUNT-26APR",
+  "underlying": "Number of dissenting votes at the April 28-29, 2026 FOMC meeting (decision 2pm ET Apr 29)",
+  "as_of": "2026-04-29T03:05:00+00:00",
+  "resolution_time": "2026-04-29T18:00:00Z",
+  "current_value": null,
+  "current_value_source": "Decision pending; statement releases 2pm ET Apr 29",
+  "method": "Resolution is a discrete count {0, 1, 2, 3, 4+}. Base rate from 2025 meetings: most meetings 0 dissents historically, but recent FOMC has been unusually divided \u2014 Sep 2025 (1: Miran), Dec 2025 (3 dissents), Jan 2026 (2 dissents per The Hill 'rare double dissent'), Mar 2026 (1: Miran per Goldman). Goldman Sachs and CNBC explicitly previewed only 1 dissent (Miran wanting a cut). Energy/Iran-driven inflation ~tilts hawks (Bowman, Bostic) but probably not to dissent magnitude on a hold; Miran's dovish dissent for a cut is most plausible. Consensus expectation = HOLD with 1 dissent (Miran). Probability mass: P(0) = 12% (Miran could fall in line on data, modest chance), P(1) = 70% (Miran alone, base case), P(2) = 14% (Miran + a second dove like Goolsbee or hawk like Bowman wanting a hike), P(3) = 3%, P(4+) = 1%. Strike T0 market 0.09, T1 market 0.86, T2 market 0.11, T3 market 0.04, T4 market 0.01 \u2014 sums to 1.11 (normal book overpricing). My distribution gives nearly identical: 0.12 / 0.70 / 0.14 / 0.03 / 0.01. Market is essentially fair on T1; very mild richness on T1 ask (0.87) vs my 0.70. Slight value selling T1 ask if exec, modest value buying T2 bid 0.07.",
+  "expected_dissents": 1.05,
+  "sigma_used": 0.6,
+  "confidence": "medium-high",
+  "strikes": {
+    "KXFOMCDISSENTCOUNT-26APR-0": 0.12,
+    "KXFOMCDISSENTCOUNT-26APR-1": 0.7,
+    "KXFOMCDISSENTCOUNT-26APR-2": 0.14,
+    "KXFOMCDISSENTCOUNT-26APR-3": 0.03,
+    "KXFOMCDISSENTCOUNT-26APR-4": 0.01
+  },
+  "notes": "Decision drops in <12 hours from as_of. Goldman Sachs preview explicitly states 'only one dissent, as in March' (Miran). CNBC/Kiplinger previews echo a hold with division about energy inflation but no second dissenter named. Path-2-dissent scenarios: (a) Bowman or Bostic dissenting hawkish over Iran/energy CPI \u2014 possible but neither has signaled imminent dissent, (b) Goolsbee joining Miran dovishly \u2014 Goolsbee has been more centrist lately, (c) Trump-appointee pressure for cuts pushing a 2nd dovish dissent. P(2)=0.14 captures these tails. P(0) 12%: Miran could decline to dissent if data softens slightly. P(3+)=0.04 for true revolt scenario (Powell's last meeting, lame-duck dynamics could embolden multiple dissents on either side). Confidence MEDIUM-HIGH because: dissent counts are an exact integer, market microstructure shows a tight consensus around 1, and forecasters across CNBC/Kiplinger/Goldman/RBC/ING align. Main residual risk is the Powell-final-meeting wildcard. Edge: T1 yes_bid 0.82 is fair vs my 0.70 (sell yes), T2 yes_bid 0.07 vs my 0.14 (buy yes), T0 yes_bid 0.08 vs my 0.12 (slight buy).",
+  "sources": [
+    "https://www.kiplinger.com/news/live/fed-meeting-updates-and-commentary-april-2026",
+    "https://www.cnbc.com/2026/04/28/fed-meeting-preview-april-2026.html",
+    "https://www.cbsnews.com/news/fed-rate-decision-april-2026-powell-final-meeting/",
+    "https://realeconomy.rsmus.com/market-minute-fomc-preview-and-powells-big-decision/",
+    "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "https://thehill.com/homenews/administration/5427938-federal-reserve-interest-rates/",
+    "https://think.ing.com/articles/another-fed-cut-but-there-is-growing-dissent/"
+  ],
+  "band_cents": 3.0
+}

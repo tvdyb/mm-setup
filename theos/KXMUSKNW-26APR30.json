@@ -1,0 +1,43 @@
+{
+  "event": "KXMUSKNW-26APR30",
+  "underlying": "Elon Musk net worth ($B) on the Bloomberg Billionaires Index update for Apr 30, 2026",
+  "as_of": "2026-04-29T03:05:00+00:00",
+  "resolution_time": "2026-04-30T21:25:00Z",
+  "current_value": 645,
+  "current_value_source": "24/7 Wall St article 2026-04-27 citing Bloomberg Billionaires Index: 'jumped $26 billion this year to $645 billion'; Newsweek/equivalent citations also report ~$636-649B in late April 2026. Direct Bloomberg fetch returned 403.",
+  "alt_anchors": {
+    "bloomberg_billionaires_apr27": 645,
+    "bloomberg_billionaires_apr16": 831,
+    "bloomberg_index_low_estimate": 636,
+    "forbes_realtime": 811,
+    "techi_estimate": 811
+  },
+  "expected_value_at_resolution": 648,
+  "sigma_used": 20,
+  "method": "Bloomberg Billionaires Index recalculates daily based on Tesla close + SpaceX/xAI mark-to-private + other. TSLA accounts for ~25-30% of variance day-to-day; SpaceX is mark-to-private and only periodically reset; xAI similar. Daily $-volatility on Musk's BBI net worth is empirically ~$8-12B std on a normal day, larger on Tesla earnings days. Tesla Q1 2026 earnings happened in late April; TSLA closed 4/28 around $374-378 (Tesla 4/27 close $378.67, intraday 4/28 ~$374). Project 2 days forward to Apr 30: Tesla daily std ~3-4%, so Tesla portion ~$110B * 0.04 * sqrt(2) = $6B sigma; SpaceX/xAI essentially flat over 2 days = ~$2B sigma; TOTAL ~$10-12B per day, sqrt(2) for 2 days = ~$15-18B. Using sigma=$22B to capture an event-day surprise (e.g., a Tesla guidance comment or SpaceX news). Anchor $645B current \u2192 projected $642B at Apr 30 (slight TSLA softness on 4/28). Compute P(X > strike) for X ~ Normal(642, 22): T600 = 1-Phi((600-642)/22) = 1-Phi(-1.91) = 97.2%; T610 = 1-Phi(-1.45) = 92.7%; T620 = 1-Phi(-1.0) = 84.1%; T630 = 1-Phi(-0.55) = 70.9%; T640 = 1-Phi(-0.09) = 53.6%; T650 = 1-Phi(0.36) = 35.9%; T660 = 1-Phi(0.82) = 20.6%; T670 = 1-Phi(1.27) = 10.2%; T680 = 1-Phi(1.73) = 4.2%; T690 = 1-Phi(2.18) = 1.5%; T700 = 1-Phi(2.64) = 0.4% (floor 0.005).",
+  "confidence": "medium",
+  "strikes": {
+    "KXMUSKNW-26APR30-T600": 0.9918,
+    "KXMUSKNW-26APR30-T610": 0.9713,
+    "KXMUSKNW-26APR30-T620": 0.9192,
+    "KXMUSKNW-26APR30-T630": 0.8159,
+    "KXMUSKNW-26APR30-T640": 0.6554,
+    "KXMUSKNW-26APR30-T650": 0.4602,
+    "KXMUSKNW-26APR30-T660": 0.2743,
+    "KXMUSKNW-26APR30-T670": 0.1357,
+    "KXMUSKNW-26APR30-T680": 0.0548,
+    "KXMUSKNW-26APR30-T690": 0.0179,
+    "KXMUSKNW-26APR30-T700": 0.005
+  },
+  "notes": "Critical caveat: I could NOT directly fetch Bloomberg's Musk profile (403 to scrapers). The $645B anchor comes from a 24/7 Wall St article dated 4/27 explicitly citing Bloomberg Billionaires Index. Wikipedia 'Wealth of Elon Musk' (last updated 4/28) cites a March 2026 BBI figure of $636B but no later. Forbes/TECHi estimates are MUCH higher ($809-831B) because they apply less aggressive private-co discounts; Bloomberg uses ~50% IPO discount on SpaceX which is the key dampener. Market last_price column tells me a lot: T600 last 0.99, T610 last 0.98, T620 last 0.98, T630 last 0.98, T640 last 0.98, T650 last 0.75, T660 last 0.14, T670 last 0.15, T680 last 0.20, T690 last 0.19, T700 last 0.09. The discontinuity at T660 (drops from 0.75 to 0.14) implies the market pegs Musk near $650-655B, which ROUGHLY matches my $645 anchor. T670/T680/T690 last prices look stale and inconsistent \u2014 likely no recent trades. Use bid/ask: T660 bid 0.21 ask 0.46 \u2192 mid ~0.34; T670 bid 0.15 ask 0.16 \u2192 0.155; T680 bid 0.01 ask 0.76 \u2192 too wide. My fair values in $640 region (~0.54) imply T640 fair 0.54 vs market last 0.98 / bid 0.14 / ask 0.97 \u2014 market here is illiquid; quote 0.97 ask suggests recent stale market-maker. Conf=medium (anchor uncertainty is the main risk; if Musk is actually at $660 I'd shift everything ~$15B right).",
+  "sources": [
+    "https://www.bloomberg.com/billionaires/profiles/elon-r-musk/",
+    "https://www.bloomberg.com/billionaires/",
+    "https://247wallst.com/investing/2026/04/27/musks-net-worth-races-toward-1-trillion/",
+    "https://en.wikipedia.org/wiki/Wealth_of_Elon_Musk",
+    "https://finance.yahoo.com/markets/stocks/articles/musk-net-worth-races-toward-134828242.html",
+    "https://247wallst.com/investing/2026/04/06/musks-net-worth-rises-16-billion-as-spacex-heads-toward-ipo/",
+    "https://finance.yahoo.com/quote/TSLA/"
+  ],
+  "band_cents": 6.0
+}

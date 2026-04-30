@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-ORSEND",
+  "underlying": "Oregon U.S. Senate 2026 D-R margin in pp (Merkley D incumbent vs GOP)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 17.0,
+  "sigma_used": 6.0,
+  "method": "Anchored on (a) Merkley's 2020 result 56.9-39.4 (+17.5pp), (b) Wyden 2022 +14.5 (~tougher year), (c) OR PVI ~D+6, Harris won OR by ~+13 in 2024, (d) Merkley running for fourth term as established incumbent, (e) D-favorable 2026 generic ballot. Mu=+17 anchors directly on his 2020 performance. Sigma 6.",
+  "confidence": "low",
+  "strikes": {
+    "KXMIDTERMMOV-ORSEND-P13": 0.7475,
+    "KXMIDTERMMOV-ORSEND-P15": 0.6306,
+    "KXMIDTERMMOV-ORSEND-P17": 0.5,
+    "KXMIDTERMMOV-ORSEND-P19": 0.3694,
+    "KXMIDTERMMOV-ORSEND-P21": 0.2525,
+    "KXMIDTERMMOV-ORSEND-P23": 0.1587,
+    "KXMIDTERMMOV-ORSEND-P25": 0.0912,
+    "KXMIDTERMMOV-ORSEND-P27": 0.0478,
+    "KXMIDTERMMOV-ORSEND-P29": 0.0228,
+    "KXMIDTERMMOV-ORSEND-P31": 0.0098,
+    "KXMIDTERMMOV-ORSEND-P33": 0.005
+  },
+  "notes": "Merkley (D inc) won 2020 by +17.5. Solid D, no top-tier R challenger. Mu=+17 matches 2020. Sigma 6. Strikes start at P13 \u2014 even a weakened Merkley clears most lower buckets, but P29+ tail is meaningful only on a blowout.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Oregon",
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Oregon",
+    "https://ballotpedia.org/Jeff_Merkley",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings",
+    "https://oregoncapitalchronicle.com/2026/02/17/whos-running-for-office-in-oregon-in-2026/"
+  ],
+  "band_cents": 20.0
+}

@@ -1,0 +1,72 @@
+{
+  "event": "KXTRUEV-26APR29",
+  "underlying": "Truflation EV Commodity Index value as of Apr 29, 2026 (basket: cobalt, copper, nickel, palladium, platinum)",
+  "as_of": "2026-04-30T06:14:05+00:00",
+  "resolution_time": "2026-04-29T~23:59:00+00:00 (Truflation publishes ~end-of-day UTC; Kalshi close_time 2026-04-29T23:59:00Z)",
+  "central_value": 1230.8779,
+  "sigma_used": 10.0,
+  "anchors": {
+    "prior_anchor": 1232.0,
+    "weights": {
+      "HG=F": 0.2,
+      "PA=F": 0.2,
+      "PL=F": 0.2
+    },
+    "prior_close": {
+      "HG=F": 5.9145,
+      "PA=F": 1461.1,
+      "PL=F": 1942.3
+    }
+  },
+  "method": "Anchor on prior-day Truflation EV settle = 1232 (settled in (1226.95, 1236.95]). Apply 1-day commodity drift assuming equal 20% weight per constituent (Truflation does not publish exact weights). Live spot at 20:48 UTC vs prior close: copper HG=F 5.9270 vs 5.9145 (+0.211%), palladium PA=F 1466.00 vs 1461.10 (+0.335%), platinum PL=F 1885.00 vs 1942.30 (-2.950%). Cobalt and nickel: no clean intraday Yahoo series, modeled zero-drift, variance absorbed into sigma. Drift contributions at w=0.20 of prior 1232: Cu +0.520, Pd +0.825, Pt -7.269, Co 0, Ni 0 -> total -5.924. mu = 1232 + (-5.924) = 1226.08. Sigma = 10 to absorb missing cobalt/nickel intraday + unknown true weights + Truflation update mechanism. P(YES at K) = 1 - Phi((K-mu)/sigma).\n[refreshed 2026-04-30T06:14Z] spots={'HG=F': 5.932, 'PA=F': 1467.5, 'PL=F': 1919.2} drift=-1.122 mu=1230.878 sigma=10.00",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXTRUEV-26APR29-T1165.06": 0.995,
+    "KXTRUEV-26APR29-T1175.06": 0.995,
+    "KXTRUEV-26APR29-T1185.06": 0.995,
+    "KXTRUEV-26APR29-T1195.06": 0.995,
+    "KXTRUEV-26APR29-T1205.06": 0.995,
+    "KXTRUEV-26APR29-T1215.06": 0.9432,
+    "KXTRUEV-26APR29-T1225.06": 0.7196,
+    "KXTRUEV-26APR29-T1235.06": 0.3379,
+    "KXTRUEV-26APR29-T1245.06": 0.0781,
+    "KXTRUEV-26APR29-T1255.06": 0.0078,
+    "KXTRUEV-26APR29-T1265.06": 0.005,
+    "KXTRUEV-26APR29-T1275.06": 0.005,
+    "KXTRUEV-26APR29-T1285.06": 0.005,
+    "KXTRUEV-26APR29-T1295.06": 0.005,
+    "KXTRUEV-26APR29-T1305.06": 0.005
+  },
+  "notes": "Refreshed 20:50 UTC with live Yahoo spots. mu shifted from 1228.82 -> 1226.08 (Pt deepened from -2.21% to -2.95%). Material strike-level moves vs prior theo: T1225 YES 0.65 -> 0.54 (turned roughly fair from buy), T1235 YES 0.27 -> 0.18, T1215 YES 0.92 -> 0.86. Top model edges vs current book (theo - mid): T1215 YES theo 0.865 vs ask 0.61 = +0.25; T1225 YES theo 0.54 vs ask 0.53 ~ flat; T1245 NO theo 0.971 vs ask 0.85 = +0.12; T1295 NO theo 0.995 vs ask 0.87 = +0.13; T1305 NO theo 0.995 vs ask 0.94 = +0.05. Wider strikes (T1235-T1275) still show 40-60c apparent edges driven entirely by 0.96-wide spreads -- not real signal. LARGEST MODEL RISKS UNCHANGED: (1) equal 20% weight is a guess; copper likely overweighted in real basket which would dampen drift impact from Pt; (2) no cobalt/nickel intraday; (3) Truflation may smooth across multiple sources rather than spot close; (4) mu point estimate 1226.08 is right at the edge of T1226.95 strike line -- a 1c move in any constituent flips T1225/T1235 YES probabilities by ~0.05.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXTRUEV-26APR29",
+    "https://truflation.com/marketplace/ev-index",
+    "https://query2.finance.yahoo.com/v8/finance/chart/HG=F",
+    "https://query2.finance.yahoo.com/v8/finance/chart/PA=F",
+    "https://query2.finance.yahoo.com/v8/finance/chart/PL=F",
+    "/Users/wilsonw/Downloads/theos/KXTRUEV-26APR28.json"
+  ],
+  "raw_strikes": {
+    "KXTRUEV-26APR29-T1165.06": 1.0,
+    "KXTRUEV-26APR29-T1175.06": 1.0,
+    "KXTRUEV-26APR29-T1185.06": 0.999998,
+    "KXTRUEV-26APR29-T1195.06": 0.999829,
+    "KXTRUEV-26APR29-T1205.06": 0.995086,
+    "KXTRUEV-26APR29-T1215.06": 0.943151,
+    "KXTRUEV-26APR29-T1225.06": 0.719646,
+    "KXTRUEV-26APR29-T1235.06": 0.337896,
+    "KXTRUEV-26APR29-T1245.06": 0.078065,
+    "KXTRUEV-26APR29-T1255.06": 0.007799,
+    "KXTRUEV-26APR29-T1265.06": 0.000315,
+    "KXTRUEV-26APR29-T1275.06": 5e-06,
+    "KXTRUEV-26APR29-T1285.06": 0.0,
+    "KXTRUEV-26APR29-T1295.06": 0.0,
+    "KXTRUEV-26APR29-T1305.06": 0.0
+  },
+  "live_spots": {
+    "HG=F": 5.932,
+    "PA=F": 1467.5,
+    "PL=F": 1919.2
+  },
+  "band_cents": 12.0
+}

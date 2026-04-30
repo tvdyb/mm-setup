@@ -1,24 +1,25 @@
 {
   "event": "KXTRUFEGGS-26APR28",
   "underlying": "Truflation US CPI Eggs Index (daily, $/dozen)",
-  "as_of": "2026-04-28T15:41:51.779032+00:00",
+  "as_of": "2026-04-29T16:27:11+00:00",
   "resolution_time": "2026-04-29T10:00:00-04:00",
-  "current_value": 2.859,
+  "current_value": 2.856,
   "current_value_source_url": "https://truflation.com/marketplace/eggs-index",
-  "sigma_used": 0.025,
-  "method": "Normal CDF centered on most recent published Truflation Eggs Index value (~$2.859/dozen, last 5 weekly samples 2.858-2.860). Sigma=0.025 widens to absorb 1-day publication lag, possible methodology resets, and the +$0.085 jump observed in the recent series.",
-  "confidence": "medium",
+  "sigma_used": 0.012,
+  "method": "Normal CDF centered on a Truflation Eggs Index anchor cross-checked against same-day USDA AMS daily egg data. Last published Truflation values (weekly-sampled chart) ~2.859. Adjusted slightly down to 2.857 to reflect a softening retail/wholesale picture for the 4/28 daily print: USDA AMS Egg Markets Overview (24-Apr-26) shows national wholesale loose Large White 21.39 cpd (-4% w/w), CA-compliant cartoned benchmark 93 cpd (-4%), conventional caged retail ad $1.43 (-15%), UEP cage-free ad $2.60 (-11%); 5 consecutive weeks with no new HPAI outbreaks; daily report 28-Apr shows caged Large +1.32 cpd partially offsetting. Sigma tightened from 0.025 to 0.012: Truflation methodology smooths a weighted retail basket (Truflation blog states retail-heavy weighting), so day-to-day index variance is small (last 10 weekly prints span only 2.855-2.860). Sigma=0.012 absorbs residual same-day publication-attribution risk and methodology updates while acknowledging that the underlying basket is structurally much more stable than the public chart's weekly-sampled jumps suggest.",
+  "confidence": "medium-high",
   "strikes": {
-    "KXTRUFEGGS-26APR28-T2.81": 0.975,
-    "KXTRUFEGGS-26APR28-T2.82": 0.9406,
-    "KXTRUFEGGS-26APR28-T2.83": 0.877,
-    "KXTRUFEGGS-26APR28-T2.84": 0.7764,
-    "KXTRUFEGGS-26APR28-T2.85": 0.6406,
-    "KXTRUFEGGS-26APR28-T2.86": 0.484,
-    "KXTRUFEGGS-26APR28-T2.87": 0.33,
-    "KXTRUFEGGS-26APR28-T2.88": 0.2005,
-    "KXTRUFEGGS-26APR28-T2.89": 0.1075,
-    "KXTRUFEGGS-26APR28-T2.90": 0.0505
+    "KXTRUFEGGS-26APR28-T2.81": 0.995,
+    "KXTRUFEGGS-26APR28-T2.82": 0.995,
+    "KXTRUFEGGS-26APR28-T2.83": 0.9849,
+    "KXTRUFEGGS-26APR28-T2.84": 0.9088,
+    "KXTRUFEGGS-26APR28-T2.85": 0.6915,
+    "KXTRUFEGGS-26APR28-T2.86": 0.3694,
+    "KXTRUFEGGS-26APR28-T2.87": 0.1217,
+    "KXTRUFEGGS-26APR28-T2.88": 0.0228,
+    "KXTRUFEGGS-26APR28-T2.89": 0.005,
+    "KXTRUFEGGS-26APR28-T2.90": 0.005
   },
-  "notes": "Settlement is the Truflation US CPI Eggs Index value attributed to 28-Apr-2026 (published next morning per Kalshi rules; 10:00 ET expiration). Current value extracted from time-series embedded in Truflation marketplace HTML (last 30 weekly points: ...2.855,2.855,2.856,2.856,2.859,2.859,2.860,2.860,2.858,2.859). Series is sampled weekly on the public chart; true daily value may differ slightly. Market mid quotes are erratic in 2.85-2.88 (almost flat ~0.49-0.50) then crater at 2.89 (0.085) \u2014 a likely thin-book artifact. Model probabilities are monotone non-increasing and represent an independent estimate. Confidence MEDIUM (good underlying value but uncertain about exact same-day vs lagged figure)."
+  "notes": "Settlement is the Truflation US CPI Eggs Index value attributed to 28-Apr-2026 (Kalshi reads next morning, 10:00 ET expiry). Refined anchor uses USDA AMS Daily National Shell Egg Index Report (28-Apr-2026, ams_2843.pdf) and the weekly Egg Markets Overview (24-Apr-2026, ams_3725.pdf) as alternative high-frequency cross-check on the weekly-sampled Truflation marketplace chart. USDA snapshot (cents/doz): caged Large White wtd avg 23.86 (+1.32 d/d), Extra Large 23.85 (-0.83); national loose Large 21.39 cpd 24-Apr (-4% w/w); CA cartoned benchmark 93 cpd (-4% w/w); breaking stock 7.75 cpd (-9%); retail features conventional caged $1.43 (-15%), UEP cage-free $2.60 (-11%); HPAI losses Apr-26 only 19,500 birds, 5 consecutive weeks with no new outbreaks. Direction signal: retail features and wholesale benchmarks softening modestly while production stabilizes. Anchor 2.857 (-0.002 vs published 2.859) with sigma 0.012 reflecting structural smoothness of Truflation retail basket. Probabilities are monotone non-increasing and clipped to [0.005, 0.995]. Confidence MEDIUM-HIGH; primary residual uncertainty is whether Truflation's daily methodology refresh attributed to 4/28 mirrors the public chart's last 2.859 print exactly (could differ by a few tenths of a cent if a new monthly retail-scrape window opened).",
+  "band_cents": 3.0
 }

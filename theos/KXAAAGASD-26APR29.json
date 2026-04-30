@@ -1,0 +1,34 @@
+{
+  "event": "KXAAAGASD-26APR29",
+  "underlying": "AAA daily US national average regular gas price ($/gal), morning posting",
+  "as_of": "2026-04-30T16:56:28+00:00",
+  "resolution_time": "2026-04-29T10:00:00-04:00",
+  "current_value": 4.3,
+  "current_value_source_url": "https://gasprices.aaa.com/?state=US",
+  "sigma_used": 0.013,
+  "mu_anchor": 4.369,
+  "method": "Normal CDF P(AAA_4/29 > s) = 1 - Phi((s-mu)/sigma) with mu=4.245, sigma=0.013, clipped to [0.005, 0.995]. AUDIT-RECALIBRATED 2026-04-29 from prior mu=4.215 sigma=0.030. Audit identified two errors: (1) prior mu=4.215 implied just +4c overnight drift, but yesterday's realized was +6.5c (4.111->4.176) and the shock regime persists (WTI ~$99-100, RBOB 3.75-yr high, Druzhba/Hormuz still active) -- continuation of yesterday's +6.5c gives mu ~4.245. (2) sigma=0.030 was multi-day vol leaking into a 1-day forecast; short-horizon implied sigma from the 4.230-4.260 quote curve is ~0.012-0.015. Resolution: single-day AAA national average reading posted morning of 4/29/2026 (verified via Kalshi rules_primary; KXAAAGASD-26APR28 settled at expiration_value=4.176 matching gasprices.aaa.com).\n[refreshed 2026-04-30T16:56Z] AAA today=$4.300 (yest $4.229); drift=+$0.0690; \u03bc=$4.3690, \u03c3=$0.013.",
+  "confidence": "medium",
+  "strikes": {
+    "KXAAAGASD-26APR29-4.215": 0.995,
+    "KXAAAGASD-26APR29-4.220": 0.995,
+    "KXAAAGASD-26APR29-4.225": 0.995,
+    "KXAAAGASD-26APR29-4.230": 0.995,
+    "KXAAAGASD-26APR29-4.235": 0.995,
+    "KXAAAGASD-26APR29-4.240": 0.995,
+    "KXAAAGASD-26APR29-4.245": 0.995,
+    "KXAAAGASD-26APR29-4.250": 0.995
+  },
+  "notes": "AUDIT FIX 2026-04-29: mu 4.215->4.245, sigma 0.030->0.013. The 50-70c 'edge' on these strikes was model error, not real edge. New theo reproduces market: 4.230 model 0.876 vs market ~0.83, 4.245 model 0.50, 4.250 model 0.35. Tail risk: overnight Hormuz/Iran escalation could gap RBOB and produce +$0.07-0.10 AAA print -- right skew not fully captured; raise sigma to 0.015 if you want more tail.",
+  "raw_strikes": {
+    "KXAAAGASD-26APR29-4.215": 1.0,
+    "KXAAAGASD-26APR29-4.220": 1.0,
+    "KXAAAGASD-26APR29-4.225": 1.0,
+    "KXAAAGASD-26APR29-4.230": 1.0,
+    "KXAAAGASD-26APR29-4.235": 1.0,
+    "KXAAAGASD-26APR29-4.240": 1.0,
+    "KXAAAGASD-26APR29-4.245": 1.0,
+    "KXAAAGASD-26APR29-4.250": 1.0
+  },
+  "band_cents": 6.0
+}

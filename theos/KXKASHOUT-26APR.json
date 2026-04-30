@@ -1,0 +1,34 @@
+{
+  "event": "KXKASHOUT-26APR",
+  "underlying": "Whether/when Kash Patel leaves as FBI Director (4 cumulative date strikes: before May 1, Jun 1, Jul 1, Aug 1)",
+  "as_of": "2026-04-29T03:05:00+00:00",
+  "resolution_time_per_strike": {
+    "MAY01": "2026-05-01T03:59:00Z",
+    "JUN01": "2026-06-01T03:59:00Z",
+    "JUL01": "2026-07-01T03:59:00Z",
+    "AUG01": "2026-08-01T03:59:00Z"
+  },
+  "current_value": "still in role",
+  "current_value_source": "Daily Beast 4/27, Townhall 4/28, multiple outlets confirm Patel still FBI Director as of 4/28; reports of impending firing but no official announcement",
+  "method": "Cumulative survival-style hazard model. P(out by Aug 1) > P(out by Jul 1) > P(out by Jun 1) > P(out by May 1). News flow as of 4/27-28: (a) Politico/Daily Beast story 'matter of time'; (b) White House anonymous official quoted; (c) Patel suing The Atlantic for defamation over MIA report; (d) Trump 'fed up' per Yahoo report; (e) Patel's iPhone-fumble video viral after Apr 27 shooting. Historical base: Trump cabinet/dir ousters typically follow weeks of leaks then a sudden Truth Social post. From 'matter of time' status the empirical hazard is roughly 5-10%/week. P(out by May 1) = ~5% (only ~2.5 days remaining; one big news cycle could trigger but Trump has not yet posted). P(out by Jun 1) = ~38% (full month, momentum building, 4 weeks * ~9-10% weekly hazard with some autocorrelation). P(out by Jul 1) = ~58% (additional month, hazard slowly decays as Patel survives news cycles). P(out by Aug 1) = ~68% (6mo to election season hazard plateau). Market is priced cumulatively: 0.054 / 0.42 / 0.60 / 0.66. My estimates: 0.05 / 0.38 / 0.58 / 0.68. Very close to market \u2014 slight long bias on Aug 1 (model 0.68 vs market 0.66) and short bias on Jun 1 (model 0.38 vs 0.42).",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXKASHOUT-26APR-MAY01": 0.05,
+    "KXKASHOUT-26APR-JUN01": 0.38,
+    "KXKASHOUT-26APR-JUL01": 0.58,
+    "KXKASHOUT-26APR-AUG01": 0.68
+  },
+  "notes": "Confirmed event semantics from Kalshi API: each market is a cumulative-by-date binary (resolves YES if Patel leaves before that date). Strikes form a monotonic hazard curve. Market last prices reveal heavy speculation that something dramatic happens in May (May 1 \u2192 Jun 1 jumps from 0.05 to 0.42 = 37pp of mass implies the market expects a ~88% conditional probability of firing in May given still-in-role on May 1). That seems aggressive \u2014 anonymous White House sources drive sentiment but Trump is famously unpredictable on cabinet timing. My model has slightly thinner May tail (33pp vs market 37pp) and slightly fatter Jul-Aug (28pp combined vs market 24pp). Risk asymmetries: (1) Patel's Atlantic lawsuit may signal he's digging in to fight, lowering near-term ouster odds. (2) FBI Director firing requires no Senate process \u2014 purely Trump's call. (3) The shooting incident on Apr 27 + iPhone video is the kind of viral embarrassment that could trigger a same-week firing. (4) Newsweek prediction-market roundup cites '23% by April 30, 67% by June 30, 80% by December 31' which is HIGHER than the current Kalshi book \u2014 possibly stale. Conf=medium-low because: insider rumors are loud but unsubstantiated, Trump's behavior on this kind of firing is hard to model, and small movements in news could shift these prices 10pp in a day.",
+  "sources": [
+    "https://www.thedailybeast.com/keystone-kash-patel-hit-by-damning-white-house-assessment/",
+    "https://townhall.com/tipsheet/mattvespa/2026/04/28/how-you-know-the-politico-story-about-kash-patels-impending-termination-is-fishy-n2675134",
+    "https://atlantablackstar.com/2026/04/27/fbi-director-kash-patel-freezes-fumbles-with-iphone-after-shooting-then-realizes-hes-being-filmed/",
+    "https://www.newsweek.com/kash-patels-odds-being-ousted-fbi-director-11853641",
+    "https://thehill.com/homenews/house/5842905-fbi-director-raskin-patel/",
+    "https://news.kalshi.com/p/kash-patel-fbi-exit-odds-white-house-2026",
+    "https://news.kalshi.com/p/kash-patel-out-fbi-odds-trump-firing-rumors",
+    "https://www.benzinga.com/markets/prediction-markets/26/04/52083721/kash-patel-out-prediction-market-buzzes-with-hot-takes-as-trump-reportedly-unhappy-with-fbi-director",
+    "https://defirate.com/news/will-trump-fire-kash-patel-odds-signal-growing-exit-risk/"
+  ],
+  "band_cents": 12.0
+}

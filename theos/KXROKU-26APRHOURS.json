@@ -1,0 +1,31 @@
+{
+  "event": "KXROKU-26APRHOURS",
+  "underlying": "Roku Inc. total platform Streaming Hours in Q1 2026 (billions)",
+  "as_of": "2026-04-28T15:00:00+00:00",
+  "resolution_time": "2026-04-30T21:00:00-04:00 (Roku Q1 2026 earnings call scheduled 2pm PT = 5pm ET on Apr 30, 2026)",
+  "current_value": 40.3,
+  "current_value_units": "billions of hours",
+  "sigma_used": 1.0,
+  "sigma_units": "billions of hours",
+  "method": "Normal CDF on Q1 2026 hours streamed, mu=40.0B sigma=1.0B. Anchored on Roku's reported quarterly hours: Q1 2025 = 35.8B (+5.1B YoY = +16.7%), Q2 2025 = 35.4B (+17.2% YoY), Q3 2025 = 36.5B (+14.1% YoY), Q4 2025 = 37.9B (FY2025 145.6B implied, +13.0% YoY). Recent QoQ trajectory shows decelerating but still solid double-digit YoY hours growth; trend slope ~13-14% YoY entering Q1 2026. Apply ~12% YoY = 40.1B central. Q1 2026 revenue guidance is +18% YoY ($1.2B) which is somewhat above hours trend; engagement growth typically lags revenue (CTV ad rate increases). Sigma 1.0B reflects: (a) one-quarter-out uncertainty in YoY hours growth (recent quarters show ~3pp swing in YoY%, =~1B hours), (b) seasonality drift (Q1 typically not peak), (c) no public preview of the metric before the print. Not yet disclosed \u2014 earnings on Apr 30 2026 ~5pm ET. Market mid-quotes (T38.5 0.855, T39 0.74, T39.5 0.415, T40 0.185, T40.5 0.09) imply a market mu near 39.5-39.7B with sigma ~0.9B; my mu is 0.3-0.5B above market, which biases YES on lower strikes vs. mid quotes.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXROKU-26APRHOURS-38000000000.0": 0.9893,
+    "KXROKU-26APRHOURS-38500000000.0": 0.9641,
+    "KXROKU-26APRHOURS-39000000000.0": 0.9032,
+    "KXROKU-26APRHOURS-39500000000.0": 0.7881,
+    "KXROKU-26APRHOURS-40000000000.0": 0.6179,
+    "KXROKU-26APRHOURS-40500000000.0": 0.4207
+  },
+  "notes": "Q1 2026 Roku hours streamed market \u2014 earnings drop Apr 30 2026 (2 days post as_of). Hours metric is disclosed every quarter in the shareholder letter. Historical anchors verified from PDFs (Q1/Q2/Q3 2025 letters and Q4 2025 letter on roku.com). Q1 2026 +12% YoY on 35.8B base = 40.1B central; sigma 1.0B chosen so T38.0 yes ~0.98 and T40.5 yes ~0.31 \u2014 a balanced normal around the most-likely outcome with non-tiny tails on either side. Confidence medium-low because (i) no Q1 2026 public preview, (ii) macro/cord-cutting/ad-spend variance can shift hours +/- 1-2B from trend, (iii) Q1 seasonality less reliable than streaming-heavy Q4. If pre-earnings leak or analyst preview surfaces a different number, theo should be re-anchored.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/events/KXROKU-26APRHOURS",
+    "https://image.roku.com/bWFya2V0aW5n/1Q25-Shareholder-Letter.pdf",
+    "https://image.roku.com/bWFya2V0aW5n/2Q25-Shareholder-Letter.pdf",
+    "https://image.roku.com/bWFya2V0aW5n/3Q25-Shareholder-Letter.pdf",
+    "https://image.roku.com/bWFya2V0aW5n/4Q25-Shareholder-Letter.pdf",
+    "https://www.stocktitan.net/news/ROKU/roku-to-announce-first-quarter-2026-financial-results-on-april-mclljz2boe65.html",
+    "https://www.roku.com/investor"
+  ],
+  "band_cents": 12.0
+}

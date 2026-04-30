@@ -1,60 +1,78 @@
 {
   "event": "KXTRUFTSA-26APR28",
   "underlying": "TSA daily passenger throughput, US checkpoints, 2026-04-28",
-  "as_of": "2026-04-28T15:39:59.818603+00:00",
+  "as_of": "2026-04-29T16:27:11+00:00",
   "resolution_time": "2026-04-29T09:00:00-04:00 (TSA publishes prior-day total ~9am ET)",
-  "nowcast_passengers": 2070000,
+  "nowcast_passengers": 1580000,
   "recent_observations": [
     {
-      "date": "2026-04-21",
-      "passengers": 2050000,
+      "date": "2026-03-31",
       "dow": "Tue",
-      "note": "estimated, depressed by shutdown"
+      "passengers": 1922047,
+      "note": "FOIA PDF (3/29-4/4)"
+    },
+    {
+      "date": "2026-04-07",
+      "dow": "Tue",
+      "passengers": 2018184,
+      "note": "FOIA PDF (4/5-4/11)"
+    },
+    {
+      "date": "2026-04-14",
+      "dow": "Tue",
+      "passengers": 1799622,
+      "note": "FOIA PDF (4/12-4/18)"
+    },
+    {
+      "date": "2026-04-19",
+      "dow": "Sun",
+      "passengers": 2595602,
+      "note": "FOIA PDF (4/19-4/25)"
+    },
+    {
+      "date": "2026-04-20",
+      "dow": "Mon",
+      "passengers": 2381092,
+      "note": "FOIA PDF (4/19-4/25)"
+    },
+    {
+      "date": "2026-04-21",
+      "dow": "Tue",
+      "passengers": 1521652,
+      "note": "FOIA PDF (4/19-4/25); deepest Tue dip of month"
     },
     {
       "date": "2026-04-22",
-      "passengers": 2080000,
       "dow": "Wed",
-      "note": "estimated"
+      "passengers": 1652295,
+      "note": "FOIA PDF (4/19-4/25)"
     },
     {
       "date": "2026-04-23",
-      "passengers": 2150000,
       "dow": "Thu",
-      "note": "estimated"
+      "passengers": 2018812,
+      "note": "FOIA PDF (4/19-4/25); only -2.3% WoW vs 4/16"
     },
     {
       "date": "2026-04-24",
-      "passengers": 2300000,
       "dow": "Fri",
-      "note": "estimated, Friday peak"
+      "passengers": 1990967,
+      "note": "FOIA PDF (4/19-4/25); -3.8% WoW vs 4/17"
     },
     {
       "date": "2026-04-25",
-      "passengers": 1900000,
       "dow": "Sat",
-      "note": "estimated"
-    },
-    {
-      "date": "2026-04-26",
-      "passengers": 2200000,
-      "dow": "Sun",
-      "note": "estimated"
-    },
-    {
-      "date": "2026-04-27",
-      "passengers": 2050000,
-      "dow": "Mon",
-      "note": "estimated"
+      "passengers": 1462371,
+      "note": "FOIA PDF (4/19-4/25)"
     }
   ],
-  "sigma_used": 85000,
-  "method": "Normal nowcast around 2.07M anchored by ongoing TSA staffing crisis from Feb-Apr 2026 government shutdown depressing late-April Tuesday throughput ~15-20% below the ~2.5M no-crisis baseline; sigma reflects volatility under disrupted operations.",
-  "confidence": "low",
+  "sigma_used": 140000,
+  "method": "Anchored on real TSA hourly throughput PDFs (3/29-4/25). 17:30 UTC refresh: TSA FOIA reading room not directly fetchable (tsa.gov returns 403 to scraping; daily passenger-volumes page reportedly offline during shutdown), and 4/26-onward weekly PDF not yet found via Google index \u2014 typical FOIA cadence publishes Wed/Thu, so 4/26-5/2 PDF unlikely before 4/29-4/30. No new daily anchor data. News scan: DHS shutdown REMAINS ACTIVE per NPR 4/27 (Congress under pressure as it returns to session) and Wikipedia (still ongoing). House passed a one-week stopgap 4/26 (visahq), Senate has skinny plan, but no signed law as of refresh time \u2014 no whipsaw event. Most-likely Tue 4/28 ~ 1.55-1.65M: late-week 4/23-4/25 already showed late-Apr WoW deltas of only -2 to -4% (not -15% like Tue 4/21), and TSA absenteeism dropped ~43-45% post Trump back-pay order. Nudged nowcast up 20K to 1.58M on stabilization signal; tightened sigma from 160K to 140K (no FOIA confirm but no contradicting data either, and the late-week WoW pattern reduces left-tail risk).",
+  "confidence": "medium",
   "strikes": {
-    "KXTRUFTSA-26APR28-T2070000": 0.5,
-    "KXTRUFTSA-26APR28-T2170000": 0.1197,
-    "KXTRUFTSA-26APR28-T2270000": 0.0093,
+    "KXTRUFTSA-26APR28-T2070000": 0.005,
+    "KXTRUFTSA-26APR28-T2170000": 0.005,
+    "KXTRUFTSA-26APR28-T2270000": 0.005,
     "KXTRUFTSA-26APR28-T2370000": 0.005,
     "KXTRUFTSA-26APR28-T2470000": 0.005,
     "KXTRUFTSA-26APR28-T2570000": 0.005,
@@ -68,5 +86,18 @@
     "KXTRUFTSA-26APR28-T3370000": 0.005,
     "KXTRUFTSA-26APR28-T3470000": 0.005
   },
-  "notes": "Could not fetch tsa.gov directly (403). 2026 has an active DHS/TSA shutdown since 2026-02-14, with 450+ TSA agents quitting, hours-long lines at major hubs, and conditions only partially improving by early April per Time/CNN/Axios coverage. Normal late-April Tuesday baseline would be ~2.45-2.55M (2025 Apr 22 ~2.49M); applied a ~15-20% shutdown haircut. Recent observations are illustrative estimates, not confirmed pulls. The T2570000 quote (mid 0.225) is almost certainly stale/wide; my model gives it ~0.0001 (floored to 0.005). Confidence is low because I lacked direct access to recent daily numbers."
+  "notes": "Refresh at 17:30 UTC: anchor 1.56M -> 1.58M, sigma 160K -> 140K, confidence MEDIUM (unchanged). Drivers: (1) No new FOIA PDF accessible \u2014 tsa.gov returns 403 to scraping and the live passenger-volumes page is reportedly offline due to shutdown; the 4/26-5/2 weekly PDF would normally drop Wed/Thu so absent data is consistent with timing rather than a signal. (2) Shutdown still active per NPR 4/27 and Wikipedia \u2014 House passed a one-week DHS stopgap on 4/26 but no signed law yet, so no upside whipsaw. (3) TSA absenteeism already dropped ~43-45% earlier in April after Trump's back-pay order (reflected in 4/23-4/25 stabilization). (4) No same-day delay anomaly news for 4/28 specifically beyond ongoing background pressure. Lowest strike (2.07M) sits ~3.5 sigma above 1.58M mean \u2014 every YES floors at 0.005. Mid-quote 0.225 on T2570000 remains far above model fair (~0). The biggest residual risk is (a) a surprise shutdown-end signing late today that triggers immediate 4/28 absenteeism normalization (would push closer to pre-shutdown Tue ~2.0M), or (b) a true 4/26-onward PDF leak. Neither has occurred in this refresh.",
+  "sources": [
+    "https://www.tsa.gov/sites/default/files/foia-readingroom/tsa-throughput-data-to-march-29-2026-to-april-4-2026.pdf",
+    "https://www.tsa.gov/sites/default/files/foia-readingroom/tsa-throughput-data-to-april-5-2026-to-april-11-2026.pdf",
+    "https://www.tsa.gov/sites/default/files/foia-readingroom/tsa-throughput-data-to-april-12-2026-to-april-18-2026.pdf",
+    "https://www.tsa.gov/sites/default/files/foia-readingroom/tsa-throughput-data-to-april-19-2026-to-april-25-2026.pdf",
+    "https://www.tsa.gov/foia/readingroom",
+    "https://www.npr.org/2026/04/27/nx-s1-5798766/congress-under-pressure-to-end-dhs-shutdown-as-it-returns-to-session-this-week",
+    "https://en.wikipedia.org/wiki/2026_United_States_federal_government_shutdowns",
+    "https://www.visahq.com/news/2026-04-26/us/house-bill-ends-dhs-shutdown-amid-controversy-over-denaturalization-drive/",
+    "https://www.cnn.com/2026/04/22/us/tsa-dhs-emergency-funds-ceasing",
+    "https://www.pbs.org/newshour/nation/airport-bottlenecks-ease-as-tsa-workers-get-paid-but-dhs-shutdown-continues"
+  ],
+  "band_cents": 6.0
 }

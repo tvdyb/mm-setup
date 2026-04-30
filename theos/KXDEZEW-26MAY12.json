@@ -1,0 +1,52 @@
+{
+  "event": "KXDEZEW-26MAY12",
+  "underlying": "Germany ZEW Indicator of Economic Sentiment for May 2026 (Trading Economics / ZEW publication, expected release 2026-05-12)",
+  "as_of": "2026-04-29T00:00:00+00:00",
+  "resolution_time": "2026-05-12T08:59:00Z",
+  "current_value": -17.2,
+  "current_value_source": "April 2026 ZEW print released 2026-04-21: -17.2 (down 16.7 pts from March's -0.5). Source: tradingeconomics.com/germany/zew-economic-sentiment-index. Lowest level since Dec 2022; ZEW President Wambach attributed to escalating Iran/Middle East war + long-term energy shortage fears.",
+  "alt_anchors": {
+    "april_2026_print": -17.2,
+    "march_2026_print": -0.5,
+    "feb_2026_print": 58.3,
+    "jan_2026_print": 59.6,
+    "te_q2_2026_forecast": -20.0,
+    "consensus_may_2026_forecast": -17.2,
+    "trailing_24m_mean": 24.5,
+    "trailing_24m_mom_change_std": 16.9,
+    "trailing_12m_mom_change_std": 20.1
+  },
+  "expected_value_at_resolution": -16.0,
+  "sigma_used": 14.0,
+  "method": "Normal model: ZEW(May) ~ N(mu=-16, sigma=14). Anchor: April 2026 = -17.2 (latest print, released 2026-04-21). Mu picked at -16 (mild +1.2 mean-reversion bounce off the 16.7-pt April shock; shock moves of this size historically partially retrace within 1-2 months unless catalyst worsens; offset by the fact that the May survey window includes the ECB May rate decision and ongoing Iran/Strait of Hormuz risk, which could push lower). Sigma picked at 14: trailing 24m std of |ZEW(m)-ZEW(m-1)| is 16.9 and trailing 12m is 20.1, but those are inflated by two consecutive shock months (March -58.8 from +58.3, April -16.7). Pre-shock 2024-2025 month-on-month std was closer to 8-12. Compromise at 14 captures normal survey noise plus elevated macro tail (Iran war, ECB meeting inside survey window, energy price). P(YES at strike K) = 1 - Phi((K - mu)/sigma) with mu=-16, sigma=14. Z-scores and probabilities: K=-7.5: z=(-7.5-(-16))/14=0.607, P=1-Phi(0.607)=0.272; K=-10: z=0.429, P=0.334; K=-12.5: z=0.250, P=0.401; K=-15: z=0.071, P=0.472; K=-17.5: z=-0.107, P=0.543; K=-20: z=-0.286, P=0.612; K=-22.5: z=-0.464, P=0.679; K=-25: z=-0.643, P=0.740; K=-27.5: z=-0.821, P=0.794; K=-30: z=-1.000, P=0.841; K=-32.5: z=-1.179, P=0.881; K=-35: z=-1.357, P=0.913; K=-37.5: z=-1.536, P=0.938; K=-40: z=-1.714, P=0.957; K=-42.5: z=-1.893, P=0.971. Floors 0.005, ceiling 0.995 (none triggered).",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXDEZEW-26MAY12-T-7.5": 0.2719,
+    "KXDEZEW-26MAY12-T-10.0": 0.3341,
+    "KXDEZEW-26MAY12-T-12.5": 0.4013,
+    "KXDEZEW-26MAY12-T-15.0": 0.4715,
+    "KXDEZEW-26MAY12-T-17.5": 0.5427,
+    "KXDEZEW-26MAY12-T-20.0": 0.6125,
+    "KXDEZEW-26MAY12-T-22.5": 0.6788,
+    "KXDEZEW-26MAY12-T-25.0": 0.7398,
+    "KXDEZEW-26MAY12-T-27.5": 0.7943,
+    "KXDEZEW-26MAY12-T-30.0": 0.8413,
+    "KXDEZEW-26MAY12-T-32.5": 0.8807,
+    "KXDEZEW-26MAY12-T-35.0": 0.9126,
+    "KXDEZEW-26MAY12-T-37.5": 0.9377,
+    "KXDEZEW-26MAY12-T-40.0": 0.9568,
+    "KXDEZEW-26MAY12-T-42.5": 0.9708
+  },
+  "notes": "Market quote snapshot from Kalshi API at as_of (yes_bid / yes_ask / mid vs my fair):\n  T-7.5:  0.05 / 0.14 / mid 0.095 vs fair 0.272 -> my fair sees more YES upside\n  T-10.0: 0.14 / 0.24 / mid 0.190 vs fair 0.334\n  T-12.5: 0.26 / 0.30 / mid 0.280 vs fair 0.401\n  T-15.0: 0.33 / 0.42 / mid 0.375 vs fair 0.472\n  T-17.5: 0.42 / 0.52 / mid 0.470 vs fair 0.543\n  T-20.0: 0.57 / 0.67 / mid 0.620 vs fair 0.613 (close)\n  T-22.5: 0.63 / 0.73 / mid 0.680 vs fair 0.679 (close)\n  T-25.0: 0.69 / 0.79 / mid 0.740 vs fair 0.740 (close)\n  T-27.5: 0.75 / 0.85 / mid 0.800 vs fair 0.794 (close)\n  T-30.0: 0.81 / 0.91 / mid 0.860 vs fair 0.841\n  T-32.5: 0.87 / 0.97 / mid 0.920 vs fair 0.881\n  T-35.0: 0.93 / 0.98 / mid 0.955 vs fair 0.913\n  T-37.5: 0.93 / 0.98 / mid 0.955 vs fair 0.938\n  T-40.0: 0.94 / 0.98 / mid 0.960 vs fair 0.957 (close)\n  T-42.5: 0.94 / 0.98 / mid 0.960 vs fair 0.971\n\nKey observation: market is essentially a brand-new listing (created 2026-04-27, $0 volume so far) so mid is probably MM-set. Market is centered tighter and lower than my fair (market expects ZEW more like -17 to -19; I have -16). The market clearly disbelieves any meaningful bounce off April's -17.2 anchor, while my model bakes in a mild reversion. Edge is largest on T-7.5 / T-10 / T-12.5 (model says NO is overpriced vs market) and at T-32.5 (market overestimates deep-NO).\n\nKey risks driving confidence to medium-low:\n  1) Resolution depends on a single survey (350 financial analysts) released 2026-05-12; survey window is the first week of May. Any news in that narrow window dominates.\n  2) Iran/Middle East war: if the conflict escalates further (Strait of Hormuz disruption, oil > $120), May print could easily fall another 10-15 pts. If a ceasefire materializes, the print could rebound 15-20 pts. This is a fat-tailed bimodal risk that a Gaussian understates.\n  3) ECB May rate decision falls inside the survey window. A surprise cut would help sentiment; a hold-with-hawkish-tone would hurt.\n  4) German fiscal/Bundestag stimulus moves can swing the print.\n  5) ZEW shocks of >20 pts have happened twice in the last 3 months (Mar -58.8, Apr -16.7), so empirical sigma is genuinely elevated relative to long-run; my sigma=14 may be too tight if we're in a structurally noisier regime \u2014 sensitivity test with sigma=18: T-7.5 P~0.317, T-15 P~0.481, T-25 P~0.691.\n  6) Resolution source confirmation: market rules cite 'Germany ZEW economic sentiment index for May 2026'. Trading Economics is the published reference but the underlying release is the ZEW Financial Market Survey from zew.de \u2014 both report the same number.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXDEZEW-26MAY12",
+    "https://tradingeconomics.com/germany/zew-economic-sentiment-index",
+    "https://www.zew.de/en/publications/zew-expertises-research-reports/research-reports/business-cycle/zew-financial-market-survey",
+    "https://www.zew.de/en/press/latest-press-releases",
+    "https://www.fxstreet.com/news/when-is-the-german-zew-survey-and-how-could-it-affect-eur-usd-202604210544",
+    "https://www.euronews.com/business/2026/04/24/ecb-interest-rate-dilemma-eurozone-growth-stalls-as-iran-war-fuels-inflation",
+    "https://www.ecb.europa.eu/press/projections/html/ecb.projections202603_ecbstaff~ebe291cd3d.en.html",
+    "https://www.investing.com/economic-calendar/german-zew-economic-sentiment-144"
+  ],
+  "band_cents": 12.0
+}

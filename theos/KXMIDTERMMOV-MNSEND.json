@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-MNSEND",
+  "underlying": "Minnesota U.S. Senate 2026 D-R margin in pp (open seat, Smith retiring; D nominee Flanagan or Craig vs Tafoya)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 8.0,
+  "sigma_used": 7.0,
+  "method": "Anchored on (a) Klobuchar 2024 +16 over White, (b) Smith 2020 +5.2 (much closer), (c) recent open-seat polling: Flanagan +6 vs Tafoya, Craig +7 vs Tafoya (Newsweek/internal), (d) Sabato 'Leans D' rating (downgraded from Likely D), (e) open seat + R-trending light-blue state. Mu=+8 averages Smith 2020 and recent head-to-heads, with mild D-environment tailwind. Sigma 7 reflects competitive race + thin polling.",
+  "confidence": "low",
+  "strikes": {
+    "KXMIDTERMMOV-MNSEND-P1": 0.8413,
+    "KXMIDTERMMOV-MNSEND-P3": 0.7625,
+    "KXMIDTERMMOV-MNSEND-P5": 0.6659,
+    "KXMIDTERMMOV-MNSEND-P7": 0.5568,
+    "KXMIDTERMMOV-MNSEND-P9": 0.4432,
+    "KXMIDTERMMOV-MNSEND-P11": 0.3341,
+    "KXMIDTERMMOV-MNSEND-P13": 0.2375,
+    "KXMIDTERMMOV-MNSEND-P15": 0.1587,
+    "KXMIDTERMMOV-MNSEND-P17": 0.0993,
+    "KXMIDTERMMOV-MNSEND-P19": 0.058,
+    "KXMIDTERMMOV-MNSEND-P21": 0.0316
+  },
+  "notes": "Most competitive of the 8. Open seat after Tina Smith retirement; Sabato downgraded to 'Leans D'. Recent polls: Flanagan/Craig +6 to +7 vs Tafoya (Newsweek). Klobuchar's +16 in 2024 is upper bound; Smith's +5 in 2020 is a more relevant prior given open seat. Mu=+8 a touch above polling head-to-heads to credit D-environment swing. Sigma 7 wide; medium-left tail risk of an R upset (~10-15% based on this distribution).",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota",
+    "https://centerforpolitics.org/crystalball/minnesota-senate-to-leans-democratic/",
+    "https://www.newsweek.com/republicans-chances-of-flipping-minnesota-senate-seat-poll-11507674",
+    "https://thehill.com/homenews/campaign/5143053-tina-smith-not-seeking-reelection/",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings"
+  ],
+  "band_cents": 20.0
+}

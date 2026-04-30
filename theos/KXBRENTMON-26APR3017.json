@@ -1,0 +1,43 @@
+{
+  "event": "KXBRENTMON-26APR3017",
+  "underlying": "Brent crude oil close price (1-minute candle close, USD/Bbl) on Apr 30, 2026 at 5pm EDT",
+  "as_of": "2026-04-28T20:30:00+00:00",
+  "resolution_time": "2026-04-30T21:00:00+00:00",
+  "current_value": 109.96,
+  "current_value_source_url": "https://fortune.com/article/price-of-oil-04-28-2026/",
+  "sigma_used": 4.0,
+  "mu_anchor": 106.5,
+  "method": "Normal CDF P(Brent_4/30_5pm > s) = 1 - Phi((s-mu)/sigma) with mu=106.5, sigma=4.0, clipped to [0.005, 0.995]. Resolution criterion (Kalshi rules_primary): 'If the close price of the 1-minute candlestick for brent crude oil on April 30, 2026 at 5 PM EDT is above $X USD/Bbl, then the market resolves Yes.' Spot reference: Brent traded $109.96 at 9am ET 4/28 per Fortune; Trading Economics shows $111.57 intraday peak. Anchor mu=106.5 chosen between current spot ($110) and market median (~$104-105 implied by T104.99 YES=0.55) \u2014 reflects partial mean reversion expected in the 2-day window (geopolitical risk premium can fade as quickly as it appears, especially if Iran ceasefire proposal advances). Sigma=4.0 covers ~2-day Brent vol in shock regime (typical 1-day Brent vol ~1.5-2%, but realized April vol elevated to ~3% per day with Hormuz/Druzhba). Market shows fat right tail (T112.99 YES=0.275, T114.99 YES=0.16) reflecting jump risk to $115+ if Iran negotiations collapse \u2014 Normal CDF underweights this; consider mixture if trading the wings. Major risks: (1) Iran/US ceasefire breakthrough -> Brent -$5-10 in hours; (2) Hormuz reclosure -> Brent +$5-10. Symmetric Normal is a passable but imperfect fit.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXBRENTMON-26APR3017-T80.99": 0.995,
+    "KXBRENTMON-26APR3017-T82.99": 0.995,
+    "KXBRENTMON-26APR3017-T84.99": 0.995,
+    "KXBRENTMON-26APR3017-T86.99": 0.995,
+    "KXBRENTMON-26APR3017-T88.99": 0.995,
+    "KXBRENTMON-26APR3017-T90.99": 0.995,
+    "KXBRENTMON-26APR3017-T92.99": 0.995,
+    "KXBRENTMON-26APR3017-T94.99": 0.995,
+    "KXBRENTMON-26APR3017-T96.99": 0.9913,
+    "KXBRENTMON-26APR3017-T98.99": 0.9698,
+    "KXBRENTMON-26APR3017-T100.99": 0.9158,
+    "KXBRENTMON-26APR3017-T102.99": 0.8099,
+    "KXBRENTMON-26APR3017-T104.99": 0.6471,
+    "KXBRENTMON-26APR3017-T106.99": 0.4513,
+    "KXBRENTMON-26APR3017-T108.99": 0.2668,
+    "KXBRENTMON-26APR3017-T110.99": 0.1308,
+    "KXBRENTMON-26APR3017-T112.99": 0.0523,
+    "KXBRENTMON-26APR3017-T114.99": 0.0169,
+    "KXBRENTMON-26APR3017-T116.99": 0.005,
+    "KXBRENTMON-26APR3017-T118.99": 0.005
+  },
+  "notes": "Confidence medium-low because: (a) 2-day horizon with active geopolitical regime (Iran-US negotiations, Druzhba pipeline halt, Hormuz still constrained), (b) market is paying meaningfully for right-tail (T114.99=0.16, T112.99=0.275) which Normal undershoots, (c) sigma=4 is a point estimate and could easily be 5-6 if a real news shock hits 4/29 or 4/30. Edge picture vs market mids: model says 100.99 is mildly cheap (0.92 vs 0.77 mid), 102.99 cheap (0.81 vs 0.72), 104.99 fair (0.65 vs 0.55 \u2014 slight YES edge), 108.99-114.99 model below market (likely correct directionally if Iran de-escalates, but market is paying for ceiling-jump scenarios). Keep position size small at the wings.",
+  "sources": [
+    "https://fortune.com/article/price-of-oil-04-28-2026/",
+    "https://tradingeconomics.com/commodity/brent-crude-oil",
+    "https://www.eia.gov/dnav/pet/hist/rbrted.htm",
+    "https://api.elections.kalshi.com/trade-api/v2/events/KXBRENTMON-26APR3017",
+    "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXBRENTMON-26APR3017"
+  ],
+  "band_cents": 12.0
+}

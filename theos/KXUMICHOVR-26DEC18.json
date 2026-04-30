@@ -1,17 +1,18 @@
 {
   "event": "KXUMICHOVR-26DEC18",
-  "underlying": "University of Michigan Index of Consumer Sentiment (overall, final release)",
-  "as_of": "2026-04-28T00:00:00Z",
+  "underlying": "University of Michigan Index of Consumer Sentiment (overall, final monthly release, FRED UMCSENT)",
+  "as_of": "2026-04-30T17:49:58+00:00",
   "resolution_time": "2026-12-18",
   "latest_known_value": 49.8,
   "latest_known_date": "2026-04-25",
   "latest_value_source_url": "https://investinglive.com/news/umich-april-final-consumer-sentiment-498-vs-480-expected-20260424/",
   "expected_value_at_resolution": 56.0,
-  "sigma_used": 8.5,
-  "method": "Latest April 2026 final = 49.8 (record-low driven by Iran-conflict shock). Assumed partial mean reversion toward last-12-mo average ~55-58 over 8 months; sigma at horizon = monthly_change_std (~3.0) * sqrt(8) ~= 8.5. P(level > 65) computed from N(56, 8.5): z = 1.06 -> ~14.4%.",
-  "confidence": "low",
+  "sigma_used": 6.5,
+  "method": "RULES VERIFIED via Kalshi API: 'Market resolves YES if any University of Michigan Consumer Sentiment Index final monthly release published during 2026 reports a value exceeding 65.0' \u2014 early-close lookback over 8 remaining final releases (May 30, Jun 27, Jul 25, Aug 29, Sep 26, Oct 31, Nov 28, Dec 19, 2026). Prior theo treated this as a single-shot Dec terminal print, materially understating P(YES). Recompute as P(max of 8 monthly final prints > 65). Latest finals: Apr26 49.8 (record low), Mar26 53.3, Feb26 56.6, Jan26 56.4, Dec25 52.9, Nov25 51.0, Oct25 53.6, Sep25 55.1, Aug25 58.2, Jul25 61.7. Conference Board Consumer Confidence April 2026 = 92.8 (edged UP, ceasefire-driven recovery), diverging from UMich record low \u2014 alt-data signal that some bounce is plausible. Modeling: drift mu_t from 50 in May to ~58 by Dec (mean reversion on Iran-shock fading); per-release sigma ~= 4-6 (rises with horizon). Single-release P(X > 65) ranges from ~0.5% in May (mu=50, sig=4) to ~13% in Dec (mu=58, sig=6). With strong serial correlation (rho ~0.7), effective independent draws ~2.5-3, so P(max > 65) ~= 17-19%. Use 0.18 as central estimate.",
+  "confidence": "medium",
   "strikes": {
-    "KXUMICHOVR-26DEC18-T65.0": 0.14
+    "KXUMICHOVR-26DEC18-T65.0": 0.18
   },
-  "notes": "Latest series prints (final): Apr26 49.8, Mar26 53.3, Feb26 56.6, Jan26 56.4, Dec25 52.9, Nov25 51.0, Oct25 53.6, Sep25 55.1, Aug25 58.2, Jul25 61.7. Series is at multi-year lows due to inflation fears and Iran war. To exceed 65 the index would need to rise ~15 points over ~8 months — possible if geopolitical shocks fade, but recent regime mean is mid-50s. Confidence LOW because the level depends heavily on whether the Iran-shock-driven regime persists. Market YES @ 17-18c is somewhat rich vs my 14% but within 1 vol of reasonable — NO edge slightly favored. Could not load Kalshi page directly (429); assumed standard 'final release > strike' resolution typical for KXUMICHOVR series."
+  "notes": "REVISION: corrected rules interpretation (lookback, not single-shot Dec). Confirmed via Kalshi API: market is 'above 65.0 in any 2026 final release', early-close on trigger. P(YES) raised from 0.14 to 0.18 to reflect the 8-release max. Market YES @ 17c is approximately fair vs my 18%, modest YES edge. ALT-DATA refinement: (1) Conference Board CCI Apr26 = 92.8 (rose 0.6pt; expectations index +1.2 to 72.2), suggests UMich record low partly Iran-survey-window artifact and some retracement likely; (2) Langer Consumer Comfort Index weekly is at 1.5yr low ~38.9 \u2014 confirms broad weakness, no strong leading bounce; (3) Morning Consult ESI daily shows similar pattern. Net read: real consumer sentiment IS depressed, but UMich is at the low end of the survey panel and most likely to retrace toward the 55-60 mid-50s regime when Iran-conflict survey questions stabilize. To clear 65 still requires a ~15pt swing from current 50, which has happened 5 times in the post-2008 record (typically post-crisis recoveries). Confidence MEDIUM (raised from low for rules, kept moderate for path uncertainty). Key risks: prolonged Iran/oil shock keeps mu_t pinned in low 50s (lowers P), or a sharp ceasefire+disinflation rally pushes a single print above 65 (raises P). Sources: Kalshi API (rules), investinglive/Bloomberg/CNN (April final 49.8), Conference Board press release (April CCI 92.8), Langer Research (weekly CCI).",
+  "band_cents": 6.0
 }

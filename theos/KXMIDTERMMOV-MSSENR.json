@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-MSSENR",
+  "underlying": "Republican margin of victory, 2026 Mississippi U.S. Senate general election (Nov 3, 2026). Incumbent Cindy Hyde-Smith (R) seeking second full term.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 13.0,
+  "sigma_used": 6.0,
+  "method": "Anchor: 2018 special Hyde-Smith +7.2 vs Espy. 2020 Hyde-Smith +10.0 vs Espy. 2024 Wicker +25.6 vs Pinkins. 2024 Trump won MS by ~17pts. Hyde-Smith chronically underperforms generic R; Wicker is a stronger candidate. Now faces D Scott Colom (Lowndes Cnty DA, well-funded). Modeled R margin ~ N(13, 6).",
+  "confidence": "medium",
+  "strikes": {
+    "KXMIDTERMMOV-MSSENR-P3": 0.9522,
+    "KXMIDTERMMOV-MSSENR-P5": 0.9088,
+    "KXMIDTERMMOV-MSSENR-P7": 0.8413,
+    "KXMIDTERMMOV-MSSENR-P9": 0.7475,
+    "KXMIDTERMMOV-MSSENR-P11": 0.6306,
+    "KXMIDTERMMOV-MSSENR-P13": 0.5,
+    "KXMIDTERMMOV-MSSENR-P15": 0.3694,
+    "KXMIDTERMMOV-MSSENR-P17": 0.2525,
+    "KXMIDTERMMOV-MSSENR-P19": 0.1587,
+    "KXMIDTERMMOV-MSSENR-P21": 0.0912,
+    "KXMIDTERMMOV-MSSENR-P23": 0.0478
+  },
+  "notes": "Hyde-Smith historically runs 5-10pts behind state PVI (won 2020 by 10 in a Trump+16 state). Trump endorsed her in primary; she won 80.8% in March 2026 R primary. D nominee Scott Colom is a well-known DA \u2014 credible. MS has high Black population (~38%) meaning D floor is high. 2024 Trump+17 sets baseline, but Hyde-Smith underperforms ~5pts. Model: ~13. Wider sigma due to Hyde-Smith's persistent underperformance and Colom's profile. Kalshi YES asks: P3 0.86, P11 0.56, P13 0.48, P15 0.41 \u2014 market median ~12-13, aligned.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Mississippi",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Mississippi",
+    "https://ballotpedia.org/Cindy_Hyde-Smith",
+    "https://mississippitoday.org/2025/06/29/cindy-hyde-smith-2026-hopes/",
+    "https://www.cookpolitical.com/senate/race/488616"
+  ],
+  "band_cents": 6.0
+}

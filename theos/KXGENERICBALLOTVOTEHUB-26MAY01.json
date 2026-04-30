@@ -1,0 +1,34 @@
+{
+  "event": "KXGENERICBALLOTVOTEHUB-26MAY01",
+  "underlying": "VoteHub 2026 generic ballot D-R margin (time-weighted) at 10:00 AM ET on May 1, 2026",
+  "as_of": "2026-04-29T03:05:00+00:00",
+  "resolution_time": "2026-05-01T14:00:00Z",
+  "current_value": 4.7,
+  "current_value_source": "VoteHub generic ballot 2026 average D+4.7 (mid-late April 2026)",
+  "alt_anchors": {
+    "silver_bulletin": null,
+    "rcp_generic": null,
+    "morning_consult": 3.0,
+    "harvard_harris": 0.0,
+    "uspollingdata_aggregate": 6.2,
+    "race_to_wh": null
+  },
+  "expected_value_at_resolution": 4.8,
+  "sigma_used": 0.55,
+  "method": "Anchor on VoteHub current value D+4.7 (most-recently-cited VoteHub aggregate). Resolution source is VoteHub itself, so cross-aggregator dispersion (Morning Consult D+3, Harvard-Harris D+0, USPollingData D+6.2) does not directly drive the answer \u2014 only VoteHub's poll mix matters. Recent VoteHub trend has been stable to slightly Dem (1-month change cited as +1.0 toward D from 3.7 to 4.7). Project 3 days forward with mild upward drift (+0.03pp/day) given (a) Trump approval crashing toward 34-37% on cost-of-living + Iran war, (b) generic ballot historically tracks net presidential approval at ~0.3 beta, so a ~3pp drop in net approval week-over-week implies +0.5-1pp Dem margin gain. Sigma 0.55pp captures the time-weighted-average smoothing (slow-moving), 3-day window, and 1-2 expected new polls dropping in. Modeling X ~ Normal(4.8, 0.55). Strike T5.5 = above 5.5%: P = 1 - Phi((5.5 - 4.8)/0.55) = 1 - Phi(1.27) = ~10.2%. Floor probability at 0.10. Market last 0.17 \u2014 slightly rich vs my 10%, marginal SELL YES.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXGENERICBALLOTVOTEHUB-26MAY01-T5.5": 0.1
+  },
+  "notes": "Single-strike binary on a slow-moving aggregator. Key risks: (1) VoteHub adds a new D+8 or D+9 poll between now and 5/1, which would push the time-weighted avg above 5.5 in a single update \u2014 Morning Consult 4/20-26 was D+3, Harvard-Harris 4/23-26 was tied; both DRAG VoteHub down toward 4.5 not up. (2) If a Reuters/Ipsos generic ballot drops in the next 3 days at D+8 (consistent with 33% Trump approval), VoteHub could jump to D+5.5+. (3) Silver Bulletin and Race to the WH do not directly enter VoteHub. Conf=medium-low because: (a) I could not directly fetch the live VoteHub number (VoteHub returned 403 to fetch), so 4.7 comes from a cited tweet/news figure that may be stale by 1-2 days; (b) generic ballot avgs move slowly so 3-day projection has small drift but tail risk from new polls is real; (c) the 5.5 strike is ~1.3 sigma out \u2014 pricing here is quite sensitive to anchor. Market 0.17 yes_ask vs my 0.10 \u2014 small edge but within sigma uncertainty.",
+  "sources": [
+    "https://votehub.com/polls/?poll=generic_ballot_2026",
+    "https://x.com/VoteHub/status/1997407283467227262",
+    "https://www.realclearpolling.com/polls/state-of-the-union/generic-congressional-vote",
+    "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls",
+    "https://pro.morningconsult.com/trackers/2026-midterm-election-generic-ballot-polls",
+    "https://uspollingdata.com/polls/generic-ballot/",
+    "https://polls.decisiondeskhq.com/averages/generic-ballot/national/lv-rv-adults"
+  ],
+  "band_cents": 12.0
+}

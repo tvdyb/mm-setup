@@ -1,0 +1,36 @@
+{
+  "event": "KXPRIMARYPLACE-KXGOVFLNOMR-2",
+  "underlying": "Who finishes 2nd in the 2026 Florida Republican gubernatorial primary (Aug 18, 2026 certified results)",
+  "as_of": "2026-04-29T03:05:00+00:00",
+  "resolution_time": "2026-08-18T14:00:00Z",
+  "current_polling_snapshot": {
+    "byron_donalds": 46,
+    "jay_collins": 4,
+    "james_fishback": 4,
+    "paul_renner": 3,
+    "casey_desantis": 7,
+    "undecided": 39
+  },
+  "current_value_source": "Emerson College Polling April 2026; Florida Phoenix; The Hill",
+  "method": "Donalds is the dominant favorite for FIRST (Polymarket 84-90%, Emerson 46%, Trump-endorsed, $22M raised). The 2ND-PLACE question is wide-open and depends crucially on whether Casey DeSantis files. Allocate probability mass for 2nd: anchor on April Emerson + Polymarket inference + the rule that the 2nd-place market sums to ~0.93 across the listed candidates (Jay Collins 0.19, Donalds 0.10, Fishback 0.50, Renner 0.05, DeSantis 0.10) which leaves ~7% for missing/other. The market's heavy weight on Fishback (0.50) reflects (a) his $22M-class fundraising in the GOP donor world, (b) his 9.5% baseline in some polls vs Collins 4.5%, (c) absence of DeSantis filing risk. My model: P(DeSantis files & places 2nd) = 0.18 (she has not declared but is rumored to); P(Fishback 2nd | DeSantis-no) = 0.45 (financial firepower, name recognition build-up by August); P(Collins 2nd | DeSantis-no) = 0.22 (LG incumbency, Tallahassee establishment); P(Renner 2nd | DeSantis-no) = 0.07; P(Donalds 2nd | DeSantis-no) = 0.04 (he is heavy 1st-place fav so 2nd means an upset by another candidate); P(other 2nd) = 0.04. Combined unconditional: Fishback 0.37, Collins 0.18, DeSantis 0.18, Donalds 0.03, Renner 0.06; residual ~0.18 to a non-listed candidate (e.g., a late entrant, Matt Gaetz, or another). Adjust to fit available strikes \u2014 only 5 candidates listed; remaining 0.18 redistributes proportionally if mutually-exclusive event resolves to one of the 5. Renormalized: Fishback 0.45, Collins 0.22, DeSantis 0.22, Donalds 0.04, Renner 0.07.",
+  "sigma_used": null,
+  "confidence": "low",
+  "strikes": {
+    "KXPRIMARYPLACE-KXGOVFLNOMR-2-JFIS": 0.45,
+    "KXPRIMARYPLACE-KXGOVFLNOMR-2-JCOL": 0.22,
+    "KXPRIMARYPLACE-KXGOVFLNOMR-2-CDES": 0.22,
+    "KXPRIMARYPLACE-KXGOVFLNOMR-2-PREN": 0.07,
+    "KXPRIMARYPLACE-KXGOVFLNOMR-2-BDON": 0.04
+  },
+  "notes": "VERY EARLY market \u2014 primary is 4 months out and the field is still forming. Casey DeSantis filing is the central uncertainty: if she enters, she likely consolidates anti-Donalds vote and takes 2nd; if she doesn't, the Collins/Fishback contest depends on which can convert money/establishment vs. populist-outsider lanes. Key risks: (1) Trump endorsement of any 2nd-tier candidate would massively shift weights. (2) Donalds collapses (low prob ~5%) and the question becomes who finishes 2nd to a different 1st. (3) New entrant from FL congressional delegation (e.g., Gaetz, Diaz-Balart). Market prices: Fishback 0.50 (slightly rich vs my 0.45), Collins 0.19 (close to my 0.22), DeSantis 0.10 (CHEAP vs my 0.22 \u2014 buy yes), Donalds 0.15 (expensive vs my 0.04 \u2014 sell yes), Renner 0.05 (fair). The Donalds 2nd market at 0.10-0.15 is HARD TO JUSTIFY since that requires both (a) Donalds losing 1st (already only ~10-15% per Polymarket) AND (b) staying in 2nd not 3rd \u2014 joint prob <5%. Likely is a rules nuance I'm missing (perhaps it pays out if Donalds withdraws and finishes 2nd by ballot order?). Conf=LOW because: 4-month forward, candidate field still forming, sparse polling, large undecided block (39%), DeSantis filing binary.",
+  "sources": [
+    "https://emersoncollegepolling.com/florida-2026-poll-donalds-leads-gop-primary-for-governor-republicans-outpace-democrats-in-florida-elections/",
+    "https://floridaphoenix.com/briefs/latest-2026-florida-gop-gubernatorial-poll-shows-byron-donalds-blowing-away-the-rest-of-the-field/",
+    "https://thehill.com/homenews/5811842-donalds-jolly-hypothetical-matchup/",
+    "https://polymarket.com/event/republican-nominee-for-florida-governor",
+    "https://en.wikipedia.org/wiki/2026_Florida_gubernatorial_election",
+    "https://floridapolitics.com/archives/769941-new-poll-shows-byron-donalds-maintains-front-runner-status-in-gop-primary/",
+    "https://floridianpress.com/2025/12/new-poll-shows-collins-beating-donalds-if-desantis-endorses-in-governors-race/"
+  ],
+  "band_cents": 20.0
+}

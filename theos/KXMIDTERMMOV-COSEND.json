@@ -1,0 +1,33 @@
+{
+  "event": "KXMIDTERMMOV-COSEND",
+  "underlying": "Colorado U.S. Senate 2026 D-R margin in pp (Hickenlooper D incumbent vs GOP nominee)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 14.0,
+  "sigma_used": 6.0,
+  "method": "AUDIT FIX 2026-04-29: mu 10->14. Anchored on (a) Hickenlooper's 2020 margin of +9.3pp over Gardner, (b) Cook PR rating 'Solid D' / Sabato 'Safe D', (c) Colorado's leftward drift since 2020 -- Harris won CO ~+11 in 2024, (d) D-favorable 2026 generic ballot (~D+3 to D+6 in April 2026 Morning Consult / Ballotpedia averages, midterm-against-incumbent-GOP-president pattern), offset by (e) Hickenlooper's only-mediocre April 2026 favorability (43-43 per Colorado Newsline) and a soft primary challenge. Audit raised mu from 10 to 14 to better match recent presidential lean and the D-favored midterm environment -- prior 10 was too anchored on Hickenlooper's 2020 underperformance. Sigma 6pp held.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXMIDTERMMOV-COSEND-P8": 0.8413,
+    "KXMIDTERMMOV-COSEND-P10": 0.7475,
+    "KXMIDTERMMOV-COSEND-P12": 0.6306,
+    "KXMIDTERMMOV-COSEND-P14": 0.5,
+    "KXMIDTERMMOV-COSEND-P16": 0.3694,
+    "KXMIDTERMMOV-COSEND-P18": 0.2525,
+    "KXMIDTERMMOV-COSEND-P20": 0.1587,
+    "KXMIDTERMMOV-COSEND-P22": 0.0912,
+    "KXMIDTERMMOV-COSEND-P24": 0.0478,
+    "KXMIDTERMMOV-COSEND-P26": 0.0228,
+    "KXMIDTERMMOV-COSEND-P28": 0.0098
+  },
+  "notes": "Hickenlooper -D incumbent in a state Biden won by +13 (2020), Harris won by ~+11 (2024). His 2020 margin (+9.3) was below presidential lean; he tends to underperform top-of-ticket. Generic ballot D+3 to D+6 nationally, plus midterm penalty for Trump's GOP, suggests modest tailwind. Mu=+10 sits roughly at his 2020 mark with light upgrade. Sigma 6 wide because no head-to-head polls released yet.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Colorado",
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Colorado",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings",
+    "https://coloradonewsline.com/2026/04/09/colorado-voters-trump-democrats-poll/",
+    "https://ballotpedia.org/United_States_Senate_election_in_Colorado,_2026",
+    "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls"
+  ],
+  "band_cents": 12.0
+}

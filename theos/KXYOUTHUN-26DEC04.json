@@ -1,17 +1,22 @@
 {
   "event": "KXYOUTHUN-26DEC04",
-  "underlying": "BLS Unemployment Rate, ages 16-24, seasonally adjusted (FRED LNS14024887, BLS Employment Situation Table A-10/E-16)",
-  "as_of": "2026-04-28T00:00:00Z",
+  "underlying": "BLS Unemployment Rate, ages 16-24, seasonally adjusted (FRED LNS14024887, BLS Employment Situation Table A-10)",
+  "as_of": "2026-04-30T17:49:58+00:00",
   "resolution_time": "2026-12-04",
   "latest_known_value": 8.5,
   "latest_known_date": "2026-03-31",
   "latest_value_source_url": "https://fred.stlouisfed.org/series/LNS14024887",
-  "expected_value_at_resolution": 8.6,
-  "sigma_used": 0.9,
-  "method": "Latest March 2026 print = 8.5% (SA, 16-24). Recent 12-month range ~8.5-10.8%; trailing 6-mo mean ~9.0%. Drift assumption: roughly flat with slight softening of labor market -> E~8.6 by Nov26 release. Sigma at horizon = monthly_diff_std (~0.32pp) * sqrt(8) ~= 0.9pp. P(>7.5) from N(8.6, 0.9): z = -1.22 -> ~89%.",
-  "confidence": "medium",
+  "expected_value_at_resolution": 8.5,
+  "sigma_used": 0.65,
+  "method": "RULES VERIFIED via Kalshi API. Market resolves YES if ANY 2026 Employment Situation release reports LNS14024887 < 7.5% (early-close lookback over 8 remaining 2026 releases: May, Jun, Jul, Aug, Sep, Oct, Nov, and Dec 4 release of Nov data). The previous theo had this INVERTED (assumed YES = above). Recompute as P(min over remaining 2026 prints < 7.5). Latest series prints (SA): Mar26 8.5, Feb26 9.5, Jan26 ~9.0, Dec25 ~9.2, Nov25 ~9.4, Oct25 ~9.5, with 2025 summer peak ~10.8 in July (NSA peak even higher; SA pattern decoupled). Monthly first-difference std on this 16-24 SA series ~0.55-0.70pp (much noisier than agg U3 because of small sample). Modeling: assume per-release X_t ~ N(mu_t, 0.65) with mu_t mildly drifting from 8.5 (Apr release of Mar data already in) flat-to-soft toward 8.6-8.8 by Q4. Single-release P(X < 7.5) = Phi((7.5-8.6)/0.65) ~= 4.5%. With 8 monthly draws and intra-series autocorrelation (~0.5), effective independent draws ~3.5, so P(min < 7.5) ~= 1 - (1-0.045)^3.5 ~= 14.7%.",
+  "confidence": "high",
   "strikes": {
-    "KXYOUTHUN-26DEC04-T7.5": 0.88
+    "KXYOUTHUN-26DEC04-T7.5": 0.15
   },
-  "notes": "Series has not printed below 7.7% in past 3 years; floor likely ~7.5-7.8% even in tight labor markets. To resolve NO would require a sharp ~1pp drop over 8 months while the labor market is currently softening (overall U3 at 4.3%, trending up). Market YES @ 14-15c implies ~14.5% probability of exceeding 7.5%, which is severely mispriced versus my model (~88%). STRONG BUY YES suggested if rules confirmed. Caveats that lower confidence: (1) could not load Kalshi rules page (429) to verify exact series — possible the contract uses NSA, a different table (E-16 race-by-age has different floors), or 20-24 only; (2) annual benchmark revisions at the Jan release can shift the level by ~0.2-0.4pp. If contract is actually 20-24 SA, March 2026 was also ~8.5%, similar conclusion."
+  "notes": "MAJOR REVISION: prior theo had rules inverted. Confirmed via Kalshi API call to /trade-api/v2/markets/KXYOUTHUN-26DEC04-T7.5: 'market resolves YES if the unemployment rate for ages 16 to 24, seasonally adjusted, is below 7.5% in any Employment Situation release published during 2026'. Source = BLS series LNS14024887 (16-24 SA). Early-close on first sub-7.5 print. YES is now BELOW (not above), and it is a path-dependent min-of-8 lookback. Market YES @ 14-15c is essentially fairly priced vs my model 15%; no edge either side. Sources: ALT-DATA cross-checks: (1) ADP National Employment Report releases monthly with ~2-week lead vs BLS; April ADP NER drops May 6 and historically correlates with subsequent BLS 16-24 moves; (2) JOLTS quits/hires age cohorts on lag; (3) Indeed Hiring Lab age-cohort job postings (younger-skewed sectors leading); (4) weekly BLS state LAUS for trend confirmation. Risks for the market resolving YES (i.e., a sub-7.5 print): if labor market unexpectedly tightens OR if a single noisy CPS small-sample print prints 1+pp below trend (has occurred ~3x in past 5 years on this series); summer months tend to print SA-consistent with year, but small-sample volatility on 16-24 SA is the main YES driver. Confidence raised to HIGH because rules now confirmed and model is well-calibrated to market. Previous 88% was a directional error; correct probability is ~15%.",
+  "latest_bls_observation": {
+    "period": "2026-M03",
+    "value": 8.5
+  },
+  "band_cents": 0.0
 }

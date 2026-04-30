@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-IDSENR",
+  "underlying": "Republican margin of victory, 2026 Idaho U.S. Senate general election (Nov 3, 2026). Incumbent Jim Risch (R) running for 4th term.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 22.0,
+  "sigma_used": 10.0,
+  "method": "AUDIT FIX 2026-04-29: mu 28->22, sigma 8->10. Anchor: 2020 Risch beat Paulette Jordan 62.6-33.6 (~+29pts). 2022 Crapo won by ~30+. 2024 Trump won ID by ~37pts. Audit caught: PPP poll showed independent Todd Achilles +3 over Risch -- a credible indie + 82-year-old incumbent + 4-way split is meaningfully tightening this race vs the 2020 baseline. Mu compressed to 22 (between PPP read and historical PVI-implied lean), sigma widened to 10 to reflect indie-volatility. Modeled R margin ~ N(22, 10).",
+  "confidence": "medium",
+  "strikes": {
+    "KXMIDTERMMOV-IDSENR-P19": 0.6179,
+    "KXMIDTERMMOV-IDSENR-P21": 0.5398,
+    "KXMIDTERMMOV-IDSENR-P23": 0.4602,
+    "KXMIDTERMMOV-IDSENR-P25": 0.3821,
+    "KXMIDTERMMOV-IDSENR-P27": 0.3085,
+    "KXMIDTERMMOV-IDSENR-P29": 0.242,
+    "KXMIDTERMMOV-IDSENR-P31": 0.1841,
+    "KXMIDTERMMOV-IDSENR-P33": 0.1357,
+    "KXMIDTERMMOV-IDSENR-P35": 0.0968,
+    "KXMIDTERMMOV-IDSENR-P37": 0.0668,
+    "KXMIDTERMMOV-IDSENR-P39": 0.0446
+  },
+  "notes": "Risch (R) age 82, running for 4th term. Faces unusual independent challenge from Todd Achilles (resigned as Dem state rep in June 2025 to run as indie). 3 Dems and Achilles split anti-R vote. Achilles strategy could compress R 2-party share but also fragment opposition. Kalshi YES asks: P19 0.67, P25 0.46, P29 0.39, P33 0.29 \u2014 market median ~24-25, lower than model's 28. We give Risch slight edge above market because state PVI (Trump +37) suggests deeper R lean than market is pricing.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Idaho",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho",
+    "https://ballotpedia.org/United_States_Senate_election_in_Idaho,_2026",
+    "https://www.cookpolitical.com/senate/race/488571",
+    "https://idahocapitalsun.com/2026/02/27/whos-running-to-represent-idaho-in-congress-in-the-2026-election-incumbents-face-challengers/"
+  ],
+  "band_cents": 6.0
+}

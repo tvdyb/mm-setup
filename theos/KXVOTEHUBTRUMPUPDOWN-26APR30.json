@@ -1,0 +1,33 @@
+{
+  "event": "KXVOTEHUBTRUMPUPDOWN-26APR30",
+  "underlying": "VoteHub time-adjusted average for Donald Trump's approval rating for Apr 30, 2026 (checked May 1, 2026 at 10:00 AM ET)",
+  "as_of": "2026-04-30T17:49:58+00:00",
+  "resolution_time": "2026-05-01T14:00:00Z",
+  "threshold": 38.7,
+  "current_value_estimate": 41.5,
+  "current_value_source": "VoteHub's reported recent net approval moved from -15.3 to -11.8 (so approve ~43%); RCP 40.7, Silver Bulletin 39, FiftyPlusOne 37 \u2014 VoteHub historically runs slightly above SB/FPO and slightly below RCP, around 41-43.",
+  "alt_anchors": {
+    "rcp": 40.7,
+    "silver_bulletin": 39.0,
+    "fiftyplusone": 37.0,
+    "ddhq": null
+  },
+  "expected_value_at_resolution": 41.2,
+  "sigma_used": 0.6,
+  "method": "Resolves YES if VoteHub's Apr-30 time-adjusted approve % is > 38.7. Threshold 38.7 was likely set at market open (4/24) and is roughly 1.5pp BELOW the then-current VoteHub level. The market is structured 'will approval go up this week?' but actually resolves on absolute crossing of 38.7, not on direction. So the real question: will VoteHub average drop to <=38.7 by 4/30? Current VoteHub estimate ~41.5 (consistent with 43% approve from cited net -11.8 and slight reweighting). To cross down to 38.7 within 3 days requires a ~2.8pp drop in a slow-moving time-weighted average \u2014 extremely unlikely without a single huge low-approval poll dominating the kernel. With sigma 0.6pp on 3-day VoteHub forward, P(X > 38.7) = 1 - Phi((38.7 - 41.2)/0.6) = 1 - Phi(-4.17) ~ 0.99997. Cap at 0.99. However, I am uncertain about (a) the exact threshold construction \u2014 38.7 might be set differently than I assume, (b) whether VoteHub really is at 41+ today vs. closer to 39-40, in which case the math tightens. Apply moderate haircut for anchor uncertainty: P(YES) = 0.85.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXVOTEHUBTRUMPUPDOWN-26APR30": 0.85
+  },
+  "notes": "Market last 0.70, yes_bid 0.70, yes_ask 0.71. The market is implying ~30% chance VoteHub drops below 38.7 by 4/30. That is pricing in a much steeper crash than the polling-aggregator dynamics suggest. HOWEVER significant caveats: (1) Could not directly fetch VoteHub site (403). My anchor of ~41.5 comes from indirect news citations of net approval -11.8 with ~43% approve in mid-late April. If VoteHub is actually at ~39.5 today (more in line with FPO 37 and SB 39), then sigma 0.6 makes P(X>38.7) ~91% \u2014 still bullish but tighter. (2) The Reuters/Ipsos 33% and AP-NORC 33% polls landing this week (4/27-28) WILL pull VoteHub down. If three sub-35 polls hit the kernel, a 1.5pp drop is plausible. (3) The 38.7 threshold being so far below the current value is the key signal \u2014 Kalshi typically sets these thresholds near current, so 38.7 may reflect VoteHub at ~39 not 41 right now. (4) Market price 0.70 and the strike-set inferred current value imply VoteHub IS already near 38.7-39.5 territory, not 41. ADJUSTING DOWN: anchor revised to current ~40.0 with sigma 0.7 \u2192 P(X>38.7) = 1-Phi(-1.86) = 96.9%. Average my two estimates and apply uncertainty haircut: 0.85 fair. Net: BUY YES at 0.71 has positive EV. Conf medium-low because of anchor uncertainty.",
+  "sources": [
+    "https://votehub.com/polls/",
+    "https://votehub.com/",
+    "https://www.realclearpolling.com/polls/approval/donald-trump/approval-rating",
+    "https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin",
+    "https://fiftyplusone.news/polls/approval/president",
+    "https://politicalwire.com/2026/04/28/trumps-approval-sinks-to-34/",
+    "https://www.aljazeera.com/news/2026/4/28/trump-approval-dips-to-record-low-amid-iran-war-inflation-woes-poll"
+  ],
+  "band_cents": 12.0
+}

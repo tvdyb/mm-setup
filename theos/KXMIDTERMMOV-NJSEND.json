@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-NJSEND",
+  "underlying": "New Jersey U.S. Senate 2026 D-R margin in pp (Booker D incumbent)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 14.0,
+  "sigma_used": 6.0,
+  "method": "Anchored on (a) Booker's 2020 +16.3 over Mehta, 2014 +13.6 over Bell, (b) NJ shifted right in 2024 \u2014 Harris +6 vs Biden +16 in 2020, (c) D-favorable midterm environment (D+3 to D+6 generic ballot), (d) weak GOP field \u2014 no top-tier challenger declared (Zdan, Tabor, Murphy, Lebovics \u2014 non-elected), (e) Booker has national profile and large fundraising advantage. Mu=+14 splits Booker's two prior marks slightly below 2020 to reflect NJ's R-trend partially offset by midterm dynamics. Sigma 6 (no head-to-head polls).",
+  "confidence": "low",
+  "strikes": {
+    "KXMIDTERMMOV-NJSEND-P9": 0.7977,
+    "KXMIDTERMMOV-NJSEND-P11": 0.6915,
+    "KXMIDTERMMOV-NJSEND-P13": 0.5662,
+    "KXMIDTERMMOV-NJSEND-P15": 0.4338,
+    "KXMIDTERMMOV-NJSEND-P17": 0.3085,
+    "KXMIDTERMMOV-NJSEND-P19": 0.2023,
+    "KXMIDTERMMOV-NJSEND-P21": 0.1217,
+    "KXMIDTERMMOV-NJSEND-P23": 0.0668,
+    "KXMIDTERMMOV-NJSEND-P25": 0.0334,
+    "KXMIDTERMMOV-NJSEND-P27": 0.0151,
+    "KXMIDTERMMOV-NJSEND-P29": 0.0062
+  },
+  "notes": "Booker (D inc) is heavily favored but NJ's 2024 swing right (Harris +6 vs Biden +16) implies erosion vs his 2020 mark. Confidence LOW because (a) no public 2026 polling yet, (b) gubernatorial race volatility in NJ. Mu=+14 is modestly below his 2014/2020 performances. Tail risk: a strong GOP recruit (e.g., Ciattarelli) enters and compresses to ~+5; current field is weak.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Jersey",
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_New_Jersey",
+    "https://uspollingdata.com/senate-2026/nj/",
+    "https://newjerseyglobe.com/congress/the-gops-big-2026-question-who-will-run-against-cory-booker/",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings"
+  ],
+  "band_cents": 20.0
+}

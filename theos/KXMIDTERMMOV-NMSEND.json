@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-NMSEND",
+  "underlying": "New Mexico U.S. Senate 2026 D-R margin in pp (Lujan D incumbent vs GOP)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 11.0,
+  "sigma_used": 6.0,
+  "method": "Anchored on (a) Lujan's 2020 +6.1 over Ronchetti (in a year Biden won NM by +10.8), (b) Heinrich 2024 won by ~+10 over Domenici, (c) NM PVI ~D+3, but presidential vote ~D+5 to D+10 in recent cycles, (d) midterm tailwind for Ds against R-led federal government, (e) Lujan's incumbency vs his prior open-seat run. Mu=+11 a meaningful upgrade on Lujan's 2020 mark, crediting both incumbency and the friendly midterm environment. Sigma 6.",
+  "confidence": "low",
+  "strikes": {
+    "KXMIDTERMMOV-NMSEND-P9": 0.6306,
+    "KXMIDTERMMOV-NMSEND-P11": 0.5,
+    "KXMIDTERMMOV-NMSEND-P13": 0.3694,
+    "KXMIDTERMMOV-NMSEND-P15": 0.2525,
+    "KXMIDTERMMOV-NMSEND-P17": 0.1587,
+    "KXMIDTERMMOV-NMSEND-P19": 0.0912,
+    "KXMIDTERMMOV-NMSEND-P21": 0.0478,
+    "KXMIDTERMMOV-NMSEND-P23": 0.0228,
+    "KXMIDTERMMOV-NMSEND-P25": 0.0098,
+    "KXMIDTERMMOV-NMSEND-P27": 0.005,
+    "KXMIDTERMMOV-NMSEND-P29": 0.005
+  },
+  "notes": "Lujan (D inc) won 2020 special by 6.1pp (open seat). Now an incumbent; NM remains light blue (~D+5). Mu=+11 upgrades for incumbency + favorable D environment. Confidence LOW: no public 2026 polls. Tail risk: strong R challenger (Ronchetti redux) could compress margin.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_New_Mexico",
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_New_Mexico",
+    "https://ballotpedia.org/Ben_Ray_Luj%C3%A1n",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings",
+    "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls"
+  ],
+  "band_cents": 20.0
+}

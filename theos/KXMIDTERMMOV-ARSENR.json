@@ -1,0 +1,31 @@
+{
+  "event": "KXMIDTERMMOV-ARSENR",
+  "underlying": "Republican margin of victory, 2026 Arkansas U.S. Senate general election (Nov 3, 2026). Incumbent Tom Cotton (R) running.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 26.0,
+  "sigma_used": 7.0,
+  "method": "Anchor: 2020 Cotton beat Libertarian Harrington by ~33pt (no Dem on ballot). 2014 Cotton beat Pryor by 17pts. 2024 Trump won AR by ~21pts. Feb 2026 GrayHouse poll: Cotton 58 vs Shoffner 36 (+22). Modeled R margin ~ N(26, 7). Strong R incumbent, mid-tier D challenger.",
+  "confidence": "medium-high",
+  "strikes": {
+    "KXMIDTERMMOV-ARSENR-P14": 0.9568,
+    "KXMIDTERMMOV-ARSENR-P16": 0.9234,
+    "KXMIDTERMMOV-ARSENR-P18": 0.8735,
+    "KXMIDTERMMOV-ARSENR-P20": 0.8043,
+    "KXMIDTERMMOV-ARSENR-P22": 0.7161,
+    "KXMIDTERMMOV-ARSENR-P24": 0.6125,
+    "KXMIDTERMMOV-ARSENR-P26": 0.5,
+    "KXMIDTERMMOV-ARSENR-P28": 0.3875,
+    "KXMIDTERMMOV-ARSENR-P30": 0.2839,
+    "KXMIDTERMMOV-ARSENR-P32": 0.1957,
+    "KXMIDTERMMOV-ARSENR-P34": 0.1265
+  },
+  "notes": "Incumbent Cotton vs Hallie Shoffner (D) and Wadlin (Lib). Polling Cotton +22 (head-to-head with Shoffner), expanding to +26 with bio info. AR has shifted very R: 2024 Trump +21. Discount slightly for D challenger present (vs 2020 with no Dem). Kalshi YES asks: P22 0.60, P24 0.54, P26 0.48 \u2014 market mid ~ 25-26, in line with model.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Arkansas",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas",
+    "https://ballotpedia.org/United_States_Senate_election_in_Arkansas,_2026",
+    "https://www.grayhouse.com/post/ar-senate"
+  ],
+  "band_cents": 3.0
+}

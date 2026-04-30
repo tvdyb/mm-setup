@@ -1,0 +1,33 @@
+{
+  "event": "KXMIDTERMMOV-LASENR",
+  "underlying": "Republican margin of victory, 2026 Louisiana U.S. Senate general election (Nov 3, 2026). Incumbent Cassidy (R) facing closed-primary challenge from Letlow.",
+  "as_of": "2026-04-28T19:30:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (general election; Kalshi expected_expiration_time per API)",
+  "point_estimate_margin": 19.0,
+  "sigma_used": 6.0,
+  "method": "Anchor: 2020 Cassidy won jungle primary outright with 60.7% (40+pt margin). 2024 Trump won LA by ~22pts. KEY: Cassidy likely loses R closed primary to Letlow (Trump+Landry endorsed; Mar 2026 American Pulse poll Letlow 31, Fleming 25, Cassidy 21). Whoever wins R primary should win general by Trump-like margin in solidly R state. Modeled R margin ~ N(19, 6).",
+  "confidence": "medium-high",
+  "strikes": {
+    "KXMIDTERMMOV-LASENR-P11": 0.9088,
+    "KXMIDTERMMOV-LASENR-P13": 0.8413,
+    "KXMIDTERMMOV-LASENR-P15": 0.7475,
+    "KXMIDTERMMOV-LASENR-P17": 0.6306,
+    "KXMIDTERMMOV-LASENR-P19": 0.5,
+    "KXMIDTERMMOV-LASENR-P21": 0.3694,
+    "KXMIDTERMMOV-LASENR-P23": 0.2525,
+    "KXMIDTERMMOV-LASENR-P25": 0.1587,
+    "KXMIDTERMMOV-LASENR-P27": 0.0912,
+    "KXMIDTERMMOV-LASENR-P29": 0.0478,
+    "KXMIDTERMMOV-LASENR-P31": 0.0228
+  },
+  "notes": "First closed-primary cycle since 2010 (was jungle primary). Trump and Landry endorsed Letlow; Cassidy in trouble in primary after his Trump-impeachment vote. General: LA Trump+22 in 2024; D bench weak; whoever wins R primary should crush. Older Senate margins: Cassidy 2014 (open) +12 runoff vs Landrieu, 2020 +40 jungle. Wider distribution if Cassidy somehow survives primary (he runs ~10pts weaker than Letlow). Center estimate ~19 reflecting Trump-margin (~22) minus small D-environment haircut. Kalshi YES asks: P11 0.89, P15 0.73, P19 0.58, P21 0.50, P23 0.42 \u2014 market median ~21. Model slightly under market.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2020_United_States_Senate_election_in_Louisiana",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Louisiana",
+    "https://ballotpedia.org/United_States_Senate_election_in_Louisiana,_2026",
+    "https://www.ellisinsight.com/senate/cassidy-crushed-in-new-poll/",
+    "https://www.thetrafalgargroup.org/news/la-ussen-gop-0325/",
+    "https://lailluminator.com/2026/01/21/trump-cassidy/"
+  ],
+  "band_cents": 3.0
+}

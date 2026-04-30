@@ -1,0 +1,32 @@
+{
+  "event": "KXMIDTERMMOV-DESEND",
+  "underlying": "Delaware U.S. Senate 2026 D-R margin in pp (Coons D incumbent vs GOP)",
+  "as_of": "2026-04-28T22:15:00+00:00",
+  "resolution_time": "2026-11-03T15:00:00Z (Kalshi close, election day)",
+  "point_estimate_margin": 24.0,
+  "sigma_used": 6.0,
+  "method": "AUDIT FIX 2026-04-29: mu 22->24. Anchored on (a) Coons' 2014 (+13.8) and 2020 (+22.3 over Lauren Witzke) margins, (b) Delaware's deep-blue PVI (D+7), Harris won DE ~+15 in 2024, (c) D-favorable 2026 generic ballot, (d) weak GOP field (no Cabinet-tier challenger). Audit raised mu from 22 to 24: incumbent advantage + D-friendly midterm + weak GOP field together imply modest outperformance vs Coons' 2020 +22.3 mark. Sigma 6pp because zero public polls yet.",
+  "confidence": "medium-low",
+  "strikes": {
+    "KXMIDTERMMOV-DESEND-P14": 0.9522,
+    "KXMIDTERMMOV-DESEND-P16": 0.9088,
+    "KXMIDTERMMOV-DESEND-P18": 0.8413,
+    "KXMIDTERMMOV-DESEND-P20": 0.7475,
+    "KXMIDTERMMOV-DESEND-P22": 0.6306,
+    "KXMIDTERMMOV-DESEND-P24": 0.5,
+    "KXMIDTERMMOV-DESEND-P26": 0.3694,
+    "KXMIDTERMMOV-DESEND-P28": 0.2525,
+    "KXMIDTERMMOV-DESEND-P30": 0.1587,
+    "KXMIDTERMMOV-DESEND-P32": 0.0912,
+    "KXMIDTERMMOV-DESEND-P34": 0.0478
+  },
+  "notes": "Coons (D incumbent) won 2020 with 59.4-37.1 (+22.3pp); Blunt Rochester's 2024 open-seat win was tighter at +14.5 in a R-trending year. Mu=+22 anchors on Coons' personal 2020 mark, accepting some Trump-era erosion offset by midterm anti-incumbency on R. Note Kalshi strikes start at P14 \u2014 even Blunt Rochester's 2024 result clears this \u2014 implying tail risk skewed toward higher buckets.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Delaware",
+    "https://ballotpedia.org/United_States_Senate_election_in_Delaware,_2026",
+    "https://en.wikipedia.org/wiki/2024_United_States_Senate_election_in_Delaware",
+    "https://www.cookpolitical.com/ratings/senate-race-ratings",
+    "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls"
+  ],
+  "band_cents": 12.0
+}

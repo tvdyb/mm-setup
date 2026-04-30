@@ -1,0 +1,38 @@
+{
+  "event": "KXUKUNRATE-26MAY19",
+  "underlying": "UK ONS unemployment rate, 16+, three-month average ending March 2026 (%)",
+  "as_of": "2026-04-28T15:00:00+00:00",
+  "resolution_time": "2026-05-19T07:00:00+01:00 (ONS Labour Market Overview release ~7am UK time)",
+  "current_value": 4.85,
+  "current_value_units": "percent",
+  "sigma_used": 0.13,
+  "sigma_units": "percentage points",
+  "method": "Normal CDF on UK 16+ unemployment rate (3-month average) for Jan-Mar 2026, mu=4.85% sigma=0.13pp. ONS publishes monthly releases at one-month lag covering rolling 3-month windows. Recent releases: March 2026 release (covering Nov 2025 - Jan 2026) printed 5.2%; April 21 2026 release (covering Dec 2025 - Feb 2026) printed 4.9%. The May 19 2026 release covers Jan-Mar 2026, which adds Mar 2026 monthly data and drops Nov 2025 \u2014 given the ~0.3pp drop just observed and continuing decline trend, central estimate is 4.8-4.9%. Picked mu=4.85 (midpoint between 4.8 and 4.9 since ONS rounds to 0.1%, the print itself will land on 4.7/4.8/4.9/5.0). Sigma 0.13pp reflects: (a) typical one-month-ahead 3MA shift of ~0.1-0.15pp (LFS revisions often 0.1-0.2pp), (b) ONS LFS data quality concerns ('official statistics in development' badge), (c) uncertainty over whether the recent 5.2->4.9 drop was a one-off vs. a true downtrend. Probabilities use continuity correction P(X > s) ~ 1 - Phi((s+0.05 - mu)/sigma) since ONS reports to 0.1% (so 'above 4.8' resolves YES if the published value is 4.9% or higher).",
+  "confidence": "medium",
+  "strikes": {
+    "KXUKUNRATE-26MAY19-T4.6": 0.938,
+    "KXUKUNRATE-26MAY19-T4.7": 0.7791,
+    "KXUKUNRATE-26MAY19-T4.8": 0.5,
+    "KXUKUNRATE-26MAY19-T4.9": 0.2209,
+    "KXUKUNRATE-26MAY19-T5.0": 0.062,
+    "KXUKUNRATE-26MAY19-T5.1": 0.0105,
+    "KXUKUNRATE-26MAY19-T5.2": 0.005,
+    "KXUKUNRATE-26MAY19-T5.3": 0.005,
+    "KXUKUNRATE-26MAY19-T5.4": 0.005,
+    "KXUKUNRATE-26MAY19-T5.5": 0.005,
+    "KXUKUNRATE-26MAY19-T5.6": 0.005,
+    "KXUKUNRATE-26MAY19-T5.7": 0.005,
+    "KXUKUNRATE-26MAY19-T5.8": 0.005,
+    "KXUKUNRATE-26MAY19-T5.9": 0.005,
+    "KXUKUNRATE-26MAY19-T6.0": 0.005
+  },
+  "notes": "Event sub_title is 'March 2026' = Jan-Mar 2026 3MA per ONS conventions. Apr 21 release printed 4.9% (Dec-Feb), down 0.3pp from prior 5.2% (Nov-Jan). Continued downward drift expected as the falling Mar 2026 single-month value enters the average; some risk of reversion if Mar prints higher. Market quotes (T4.6 yes mid 0.745, T4.7 yes mid 0.515, T4.8 yes mid 0.52, T4.9 yes mid 0.50) are extremely wide (wide bid-ask) on a market that just opened today (open_time 2026-04-28T12:10Z, vol=0). No edge to be assumed without tighter quotes. Confidence medium because ONS cadence and prior anchor are well-documented but LFS revisions and Mar-only data point uncertainty are real. If a leak or pre-release scan emerges, recalibrate.",
+  "sources": [
+    "https://api.elections.kalshi.com/trade-api/v2/events/KXUKUNRATE-26MAY19",
+    "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/april2026",
+    "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/march2026",
+    "https://tradingeconomics.com/united-kingdom/unemployment-rate",
+    "https://commonslibrary.parliament.uk/research-briefings/cbp-9366/"
+  ],
+  "band_cents": 6.0
+}
